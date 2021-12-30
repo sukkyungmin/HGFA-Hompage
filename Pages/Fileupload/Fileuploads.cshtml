@@ -1,0 +1,116 @@
+﻿@page
+@model HangilFA.Pages.Fileupload.FileuploadsModel
+@{
+
+}
+
+<link rel="stylesheet" href="~/scss/04_utility/utility.min.css" asp-append-version="true" />
+
+
+<div style="padding-top:7em;" />
+
+@*<div>
+    <input type="radio" id="huey" name="drone" value="huey"
+           checked>
+    <label for="huey">Huey</label>
+</div>
+
+<div>
+    <input type="radio" id="dewey" name="drone" value="dewey">
+    <label for="dewey">Dewey</label>
+</div>
+
+<div>
+    <input type="radio" id="louie" name="drone" value="louie">
+    <label for="louie">Louie</label>
+</div>*@
+
+
+
+@*<h1>Upload multiple buffered files to physical storage with one file upload control</h1>
+
+    <p>One or more files can be selected by the visitor. The following form's page handler saves the file(s) to disk.</p>
+
+    <form enctype="multipart/form-data" method="post">
+        <dl>
+            <dt>
+                <label asp-for="FileUpload.FormFiles"></label>
+            </dt>
+            <dd>
+                <input asp-for="FileUpload.FormFiles" type="file" multiple />
+                <span asp-validation-for="FileUpload.FormFiles"></span>
+            </dd>
+        </dl>
+        <input asp-page-handler="Upload" class="btn" type="submit" value="Upload" />
+    </form>
+
+    <p class="result">
+        @Model.Result
+    </p>*@
+
+<h2>File Upload & Image Preview</h2>
+<p class="lead">No Plugins <b>Just Javascript</b></p>
+<p>@Model.Listgroup</p>
+
+<div>
+    @if (@Model.Radiobuttonitem[1].Checks)
+    {
+        <p>참입니다.</p>
+    }
+    else
+    {
+        <p>거짓입니다.</p>
+    }
+</div>
+
+<!-- Upload  -->
+<form id="file-upload-form" class="uploader" enctype="multipart/form-data" method="post">
+
+    @*@foreach (var item in Model.Radiobuttonitem)
+        {
+            <div>
+                <input asp-for="@item.Text[i]" type="radio" value="@item.Values" checked="@item.Checks">
+                <label for="item_Text[i]">@item.Text</label>
+            </div>
+            i++;
+        }*@
+
+    @for (var i = 0; i < Model.Radiobuttonitem.Count; i++)
+    {
+        <div>
+            <input type="checkbox" asp-for="@Model.Radiobuttonitem[i].Checks"/>
+            <label style="margin-left:10px;" asp-for="@Model.Radiobuttonitem[i].Checks">@Model.Radiobuttonitem[i].Text</label>
+        </div>
+    }
+
+
+    <input asp-for="FileUpload.FormFiles" type="file" accept="image/*" multiple />
+
+    <label for="FileUpload_FormFiles" id="file-drag">
+        <img id="file-image" src="#" alt="Preview" class="hidden">
+        <div id="start">
+            <i class="fa fa-download" aria-hidden="true"></i>
+            <div>Select a file or drag here</div>
+            <div id="notimage" class="hidden">Please select an image</div>
+            <span id="file-upload-btn" class="btn btn-primary">Select a file</span>
+        </div>
+        <div id="response" class="hidden">
+            <div id="messages"></div>
+            <progress class="progress" id="file-progress" value="0">
+                <span>0</span>%
+            </progress>
+        </div>
+    </label>
+
+    <input asp-page-handler="Upload" class="btn" type="submit" value="Upload" />
+</form>
+
+<p class="result">
+    @Model.Result
+</p>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+<script src="~/js/utility.js" asp-append-version="true"></script>

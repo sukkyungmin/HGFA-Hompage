@@ -1,0 +1,73 @@
+﻿@page
+@model HangilFA.Pages.Admin.EditUserModel
+@{
+    ViewData["Index"] = "9";
+    //ViewData["SubIndex"] = "10";
+}
+
+<link rel="stylesheet" href="~/scss/01_main/Table.css" />
+
+
+<div style="padding-top:8em;" />
+
+
+<div class="edit-center">
+
+    <h1>권한 부여</h1>
+    <h2>권한은 한가지만 부여가능하며 2가지 선택시 세이브가 되지않으며 현재 페이지로 돌아옵니다.</h2>
+
+    @if(Model.error)
+    {
+        <h4 style="color:red;">2가지 선택 혹은 아무것도 선택을 안하셨습니다.</h4>
+    }
+
+    <div class="col-md-4 div_center">
+        <form method="post">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <input type="hidden" asp-for="userviewmodel.Id" class="form-control" />
+            <div class="form-group group-text">
+                <label asp-for="userviewmodel.FullName" class="control-label"></label>
+                <input asp-for="userviewmodel.FullName" class="form-control" readonly />
+                <span asp-validation-for="userviewmodel.FullName" class="text-danger"></span>
+            </div>
+            <div class="form-group group-text">
+                <label asp-for="userviewmodel.Email" class="control-label"></label>
+                <input asp-for="userviewmodel.Email" class="form-control" readonly />
+                <span asp-validation-for="userviewmodel.Email" class="text-danger"></span>
+            </div>
+            <p>권한 선택</p>
+            <div class="form-group group-ul">
+                <ul>
+                    @for (var i = 0; i < Model.userviewmodel.Roles.Length; i++)
+                    {
+                        <li>
+                            <input type="checkbox" asp-for="@Model.userviewmodel.Roles[i].Selected" />
+                            <label style="margin-left:10px;" asp-for="@Model.userviewmodel.Roles[i].Selected">@Model.userviewmodel.Roles[i].Name</label>
+                            <input type="hidden" asp-for="@Model.userviewmodel.Roles[i].Id" />
+                            <input type="hidden" asp-for="@Model.userviewmodel.Roles[i].Name" />
+                        </li>
+                    }
+                </ul>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+        <a asp-area="" asp-page="/Admin/Users">Back to List</a>
+    </div>
+</div>
+
+
+<script>
+
+    $('input[type="text"]').keydown(function () {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+        };
+    });
+
+</script>
+
+
+
+

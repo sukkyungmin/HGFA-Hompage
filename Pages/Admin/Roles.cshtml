@@ -1,0 +1,61 @@
+﻿@page
+@model HangilFA.Pages.Admin.RolesModel
+
+@using Microsoft.AspNetCore.Identity
+@using HangilFA.Areas.Identity.Data
+
+@inject UserManager<HangilFAUser> UserManager
+
+@{
+    ViewData["Index"] = "9";
+    //ViewData["SubIndex"] = "12";
+}
+
+<link rel="stylesheet" href="~/scss/01_main/Table.min.css" />
+
+<div style="padding-top:5em;" />
+
+<div id="demo">
+    @*<h1>사용자 관리 리스트 목록.</h1>*@
+    <h2>권한 아이디에 페이지 할당.</h2>
+
+    <!-- Responsive table starts here -->
+    <!-- For correct display on small screens you must add 'data-title' to each 'td' in your table -->
+    <div class="table-responsive-vertical shadow-z-1">
+        <!-- Table starts here -->
+        <table id="table" class="table table-hover table-mc-light-blue">
+            <thead>
+                <tr>
+                    <th>Identity Key</th>
+                    <th>Name</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.roleviewmodel)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        @if (@UserManager.GetUserName(User) == "Admin")
+                        {
+                            <td>
+                                <a asp-area="" asp-page="/Admin/EditRolePermission" asp-route-id="@item.Id">Edit</a>
+                            </td>
+                            <td>
+                                <a asp-area="" asp-page="/Admin/DeleteRole" asp-route-id="@item.Id">Delete</a>
+                            </td>
+                        }
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div style="padding-top:4em;" />

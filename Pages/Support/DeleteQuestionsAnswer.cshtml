@@ -1,0 +1,42 @@
+﻿@page
+@model HangilFA.Pages.Support.DeleteQuestionsAnswerModel
+@{
+    ViewData["Index"] = "6";
+    ViewData["SubIndex"] = "8";
+}
+
+
+<link rel="stylesheet" href="~/scss/03_Support/Support.min.css" asp-append-version="true" />
+<script src="~/js/support.js" asp-append-version="true"></script>
+
+
+<div style="padding-top:7em;" />
+
+
+<div style="width: 80%; margin: auto;">
+
+    <h4 style="margin-bottom:1em; text-align:center; color:#808080;">댓글 삭제</h4>
+
+    <div style="text-align:right; margin:0 0 15px 0;">
+        <a asp-page="/Support/ViewQuestions" asp-route-id="@Model.questionsanswervwriteviewmodel.SupporQuestionsId">Back to List</a>
+    </div>
+
+    <div class="replywrap">
+        <form method="post">
+            <div class="wrap">
+                <div>
+                    <strong>@Model.questionsanswervwriteviewmodel.AnswerUser</strong>
+                </div>
+                <div>
+                    <input type="hidden" asp-for="questionsanswervwriteviewmodel.Id" class="form-control" />
+                    <input type="hidden" asp-for="questionsanswervwriteviewmodel.SupporQuestionsId" class="form-control" />
+                    <textarea asp-for="questionsanswervwriteviewmodel.Content" readonly></textarea>
+                </div>
+                <div style="text-align:right; margin:0.5em;">
+                    <input type="submit" value="Delete" class="btn btn-primary" style="width:5%;" />
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>

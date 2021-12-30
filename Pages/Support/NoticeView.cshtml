@@ -1,0 +1,25 @@
+﻿@page
+@model HangilFA.Pages.Support.NoticeViewModel
+@{
+    ViewData["Index"] = "6";
+    ViewData["SubIndex"] = "7";
+}
+
+
+<div style="padding-top:7em;" />
+
+<div style="width: 80%; margin: auto;">
+
+    <h4 style="margin-bottom:1em; text-align:center; color:#191919;">@Model.noticesviewmodel.Title</h4>
+
+    <div style="text-align:right; margin:0 0 15px 0;">
+        <p style="font-size:15px; color:brown;">@Model.noticesviewmodel.CreateFullname (@Model.noticesviewmodel.CreateTime)</p>
+        <a asp-page="Notice">Back to List</a>
+    </div>
+
+        <div id="Noticescontect" style="border:1px solid #808080; min-height:600px;">
+            @Html.Raw(Model.noticesviewmodel.RichContent)
+        </div>
+</div>
+
+<div style="padding-top:5em;" />

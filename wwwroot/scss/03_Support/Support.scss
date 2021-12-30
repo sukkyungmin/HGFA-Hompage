@@ -1,0 +1,91 @@
+﻿//****************************************************//
+// Questions
+//****************************************************//
+
+
+.replywrap {
+
+    .names {
+        text-align: left;
+        width: 100%;
+        margin-top: 0.5em;
+
+        strong {
+            font-size: 0.8em;
+            color: #343434;
+        }
+
+        a , span {
+            float: right;
+            font-size: 0.8em;
+        }
+    }
+
+    .contents {
+        text-align: left;
+        width: 100%;
+        border-bottom: 1px solid #E8E8E8;
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        pre {
+            padding: 0.5em;
+            font-size: 12px;
+            color: #343434;
+            font-weight: normal;
+        }
+
+        p {
+            padding: 0.5em;
+            font-size: 8px;
+            color: #acacac;
+            margin: -2.5em 0 1em 0;
+        }
+    }
+}
+
+
+
+
+.wrap {
+    width: 100%;
+    border: 2px solid #E5E5E4;
+    border-radius: 5px;
+
+    div {
+
+        text-align:left;
+
+        strong {
+            
+            padding: 0.5em;
+        }
+
+        span {
+            float:right;
+            padding-right:1em;
+            font-size:0.8em;
+            color:#808080;
+        }
+    }
+
+    div {
+        textarea {
+            width: 100%;
+            resize: none;
+            overflow-y: hidden;
+            padding: 0.5em;
+            padding-bottom: 0.2em;
+            line-height: 1.4;
+            border-color: transparent;
+            color: #343434;
+            font-size: 14px;
+
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+}

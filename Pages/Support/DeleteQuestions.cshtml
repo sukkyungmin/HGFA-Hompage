@@ -1,0 +1,48 @@
+﻿@page
+@model HangilFA.Pages.Support.DeleteQuestionsModel
+@{
+    ViewData["Index"] = "6";
+    ViewData["SubIndex"] = "8";
+}
+
+<div style="padding-top:7em;" />
+
+
+<div style="width: 80%; margin: auto;">
+
+    <h4 style="margin-bottom:1em; text-align:center; color:#808080;">게시판 편집</h4>
+
+    <form method="post">
+
+        <div>
+            <div class="form-group" style="width:85%; display:inline-block;">
+                @*<label asp-for="noticesViewModel.Title" class="control-label"></label>*@
+                <input id="input_text" asp-for="Questionsviewmodel.Title" class="form-control" readonly />
+            </div>
+            <div class="form-group" style="width:10%; display:inline-block; float:right;">
+                <input type="hidden" asp-for="Questionsviewmodel.Id" class="form-control" />
+                <input type="submit" value="Delete" class="btn btn-primary" style="width:150px; display:inline-block;" />
+            </div>
+        </div>
+
+        <div style="text-align:right; margin:0 0 15px 0;">
+            <p style="font-size:15px; color:brown;">Create User : @Model.Questionsviewmodel.CreateFullname (@Model.Questionsviewmodel.CreateTime)</p>
+            <a asp-page="/Support/Questions">Back to List</a>
+        </div>
+
+        <div id="Noticescontect" style="margin:auto; border:1px solid #808080; min-height:540px; max-height:540px; overflow-y:auto;">
+            @Html.Raw(Model.Questionsviewmodel.Content)
+        </div>
+
+    </form>
+</div>
+
+<script>
+
+    $('input[type="text"]').keydown(function () {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+        };
+    });
+
+</script>

@@ -1,0 +1,50 @@
+﻿@page
+@model HangilFA.Pages.Admin.DeleteRoleModel
+@{
+    ViewData["Index"] = "9";
+    //ViewData["SubIndex"] = "12";
+}
+
+<link rel="stylesheet" href="~/scss/01_main/Table.css" />
+
+<div style="padding-top:8em;" />
+
+
+<div class="edit-center">
+
+    <h1>권한 삭제</h1>
+    <h2>권한이 삭제되면 권한을 부여받은 계정들의 권한도 자동 삭제됩니다.</h2>
+
+    <div class="col-md-4 div_center">
+        <form method="post">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group group-text">
+                <label asp-for="roleviewmodel.Id" class="control-label"></label>
+                <input asp-for="roleviewmodel.Id" class="form-control" readonly />
+                <span asp-validation-for="roleviewmodel.Id" class="text-danger"></span>
+            </div>
+            <div class="form-group group-text">
+                <label asp-for="roleviewmodel.Name" class="control-label"></label>
+                <input asp-for="roleviewmodel.Name" class="form-control" readonly />
+                <span asp-validation-for="roleviewmodel.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Delete" class="btn btn-primary" />
+            </div>
+        </form>
+        <a asp-page="./Roles">Back to List</a>
+    </div>
+</div>
+
+
+<script>
+
+    $('input[type="text"]').keydown(function () {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+        };
+    });
+
+</script>
+
+

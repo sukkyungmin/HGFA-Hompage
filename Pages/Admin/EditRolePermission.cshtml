@@ -1,0 +1,40 @@
+﻿@page
+@model HangilFA.Pages.Admin.EditRolePermissionModel
+@{
+    ViewData["Index"] = "9";
+    //ViewData["SubIndex"] = "12";
+}
+
+<link rel="stylesheet" href="~/scss/01_main/Table.css" />
+
+<div style="padding-top:8em;" />
+
+
+<div class="edit-center">
+
+    <h1>페이지 할당</h1>
+    <h2>페이지 추가 개발필요.</h2>
+
+    <div class="col-md-4 div_center">
+        <form method="post">
+            <div class="form-group group-ul">
+                <ul style="list-style-type: none;">
+                    @for (var i = 0; i < Model.navigationmenuviewmodel.Count; i++)
+                    {
+                        <li>
+                            <input type="checkbox" asp-for="@Model.navigationmenuviewmodel[i].Permitted" />
+                            <label style="margin-left:10px;" asp-for="@Model.navigationmenuviewmodel[i].Permitted">@Model.navigationmenuviewmodel[i].Name</label>
+                            <input type="hidden" asp-for="@Model.navigationmenuviewmodel[i].Id" />
+                            <input type="hidden" asp-for="@Model.navigationmenuviewmodel[i].Name" />
+                        </li>
+                    }
+                </ul>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+        <a asp-page="./Roles">Back to List</a>
+    </div>
+</div>
+

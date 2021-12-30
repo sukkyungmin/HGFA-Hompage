@@ -1,0 +1,132 @@
+﻿@page
+@model HangilFA.Pages.Support.QuestionsModel
+
+@using Microsoft.AspNetCore.Identity
+@using HangilFA.Areas.Identity.Data
+
+@inject UserManager<HangilFAUser> UserManager
+@{
+    ViewData["Index"] = "6";
+    ViewData["SubIndex"] = "8";
+}
+
+
+<link rel="stylesheet" href="~/scss/01_main/Table.min.css" />
+
+<div style="padding-top:5em;" />
+
+
+<div id="demo" style=" max-width: 80%;">
+    @*<h1>사용자 관리 리스트 목록.</h1>*@
+    <h2>게시판</h2>
+
+    <!-- Responsive table starts here -->
+    <!-- For correct display on small screens you must add 'data-title' to each 'td' in your table -->
+    <div class="table-responsive-vertical shadow-z-1">
+        <!-- Table starts here -->
+        <table id="table" class="table table-hover table-mc-light-blue">
+            <thead>
+                <tr>
+                    <th style="width:5%;">No</th>
+                    <th>Title</th>
+                    <th style="width:10%;">User</th>
+                    <th style="width:15%;">Date</th>
+                    <th style="width:5%;">View</th>
+                    <th style="width:5%;">Edit</th>
+                    <th style="width:5%;">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{int rowNo = 0; }
+                @foreach (var item in Model.Students)
+                {
+                <tr>
+                    @if (true)
+                    {
+                        rowNo += 1;
+                    }
+                    <td>
+                        @(Model.Students.TotalNumber - (rowNo - 1))
+                    </td>
+                    <td>
+                        @if (item.ContentTimeCheck)
+                        {
+                        <span>@Html.DisplayFor(modelItem => item.Title)</span> <span style="color:#ff0000">[@Html.DisplayFor(modelItem => item.AnswerCount)]</span>
+                                                                            <span style="color:#706fff"> new</span>
+                        }
+                        else
+                        {
+                            <span>@Html.DisplayFor(modelItem => item.Title) </span> <span style="color:#ff0000">[@Html.DisplayFor(modelItem => item.AnswerCount)]</span>
+                        }     
+                    </td>
+                    <td>
+                        @if (item.CreateFullname == "" || item.CreateFullname == null)
+                        {
+                            @Html.DisplayFor(modelItem => item.CreateUser)
+                        }
+                        else
+                        {
+                            @Html.DisplayFor(modelItem => item.CreateFullname)
+                        }
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreateTime)
+                    </td>
+                    <td>
+                        <a asp-page="/Support/ViewQuestions" asp-route-id="@item.Id">View</a>
+                    </td>
+                    @if (@UserManager.GetUserName(User) == "Admin" || @UserManager.GetUserId(User) == item.CreateUserId)
+                    {
+                        @if (@UserManager.GetUserId(User) == item.CreateUserId)
+                        {
+                            <td>
+                                <a asp-area="" asp-page="/Support/EditQuestions" asp-route-id="@item.Id">Edit</a>
+                            </td>
+                        }
+                        else
+                        {
+                            <td>
+                            </td>
+
+                        }
+                        <td>
+                            <a asp-area="" asp-page="/Support/DeleteQuestions" asp-route-id="@item.Id">Delete</a>
+                        </td>
+                    }
+                    else
+                    {
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                    }
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+
+    @{
+        var prevDisabled = !Model.Students.HasPreviousPage ? "disabled" : "";
+        var nextDisabled = !Model.Students.HasNextPage ? "disabled" : "";
+    }
+
+    <div style="text-align:center">
+        <a asp-page="/Admin/Notices"
+           asp-route-pageIndex="@(Model.Students.PageIndex - 1)"
+           class="btn btn-primary @prevDisabled" style="width:130px; margin-left:120px;">
+            Previous
+        </a>
+        <a asp-page="/Admin/Notices"
+           asp-route-pageIndex="@(Model.Students.PageIndex + 1)"
+           class="btn btn-primary @nextDisabled" style="width:130px;">
+            Next
+        </a>
+
+        <a asp-page="/Support/CreateQuestions" class="btn btn-primary" style="float:right; width:120px;">Add List</a>
+    </div>
+</div>
+
+
+<div style="padding-top:4em;" />

@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>한길에프에이(주)</title>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/vender/d3/d3.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="/scss/01_main/main.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="~/images/icon/Hgfa.ico" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+
+        <script>
+            $(document).ready(function () {
+
+                var nav = document.getElementById('maindiv');
+
+                var navItems = nav.getElementsByTagName('a');
+
+                var activeItem = navItems[@Convert.ToInt32(@ViewData["index"])];
+
+                activeItem.style.color = "#3DB2D9";
+
+            });
+        </script>
+
+
+        @if (@Convert.ToInt32(@ViewData["SubIndex"]) != 0)
+        {
+
+            <script>
+                            $(document).ready(function () {
+
+                                var nav = document.getElementById('maindiv');
+
+                                var navItems = nav.getElementsByTagName('a');
+
+                                var activeItem = navItems[@Convert.ToInt32(@ViewData["SubIndex"])];
+
+                                activeItem.style.color = "#3DB2D9";
+
+                            });
+            </script>
+        }
+
+        <div class="container menustyle1 hides" id="maindiv" style="position: fixed; z-index:1; color:#4cff00;">
+            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+                @await Component.InvokeAsync("NavigationMenu")
+                @*<a asp-area="" asp-page="/Index" style="max-width:100px;">
+                        <img src="~/images/logos/HGFA_Logo.png" style="height:40%; width:100%;" />
+                    </a>
+
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                        <ul class="navbar-nav  menu-left" style="margin-left:auto; margin-right:auto;">
+                            <li>
+                                <a href="#">Company<i class="fa fa-angle-down"></i></a>
+                                <ul class="dropdown-menu dropdown-content">
+                                    <li><a asp-area="" asp-page="/Company/intro">개요</a></li>
+                                    <li><a asp-area="" asp-page="/Company/vision">비전</a></li>
+                                    <li><a asp-area="" asp-page="/Company/history">역사</a></li>
+                                </ul>
+                            </li>
+                            <li><a asp-area="" asp-page="/Product/gallery">Product</a></li>
+                            <li><a asp-area="" asp-page="/Document/HgfaDocument">Document</a></li>
+                            <li>
+                                <a href="#">Categories<i class="fa fa-angle-down"></i></a>
+                                <ul class="dropdown-menu dropdown-content">
+                                    <li><a href="#none" id="one" class="button z_index_0">Category One</a></li>
+                                    <li><a href="#none" id="one" class="button z_index_0">Category Two</a></li>
+                                    <li><a href="#none" id="one" class="button z_index_0">Category Three</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <partial name="_loginPartial" />
+                    </div>*@
+            </nav>
+        </div>
+
+        @*<p class="scroll-btm-bar imagedisplaymode"> </p>*@
+
+        <div class="progress-wrap">
+            <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+            </svg>
+        </div>
+
+        <div id="modal-container">
+            <div class="modal-background">
+                <div class="modal z_index_1">
+                    <h2>I'm a Sorry</h2>
+                    <p>is being developed!</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        &copy; @DateTime.Now.Year - Hangil FA -
+    </footer>
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

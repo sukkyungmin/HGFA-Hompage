@@ -1,0 +1,43 @@
+﻿@page
+@model HangilFA.Pages.Admin.CreateRoleModel
+@{
+    ViewData["Index"] = "9";
+    //ViewData["SubIndex"] = "13";
+}
+
+<link rel="stylesheet" href="~/scss/01_main/Table.css" />
+
+<div style="padding-top:10em;" />
+
+
+<div class="edit-center">
+
+    <h1>권한 생성</h1>
+    <h2>권한 아이디 생성 페이지이며 생성된 아이디는 Roles Edit 페이지에서 부여받은 페이지 수 만큼 Display 가능합니다.</h2>
+
+    <div class="col-md-4 div_center">
+        <form method="post">
+            @*<div asp-validation-summary="All" class="text-danger"></div>*@
+            <div class="form-group">
+                <label asp-for="roleviewmodel.Name" class="control-label"></label>
+                <input asp-for="roleviewmodel.Name" class="form-control" />
+                <span asp-validation-for="roleviewmodel.Name" class="text-danger"></span>
+            </div>
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+        <a asp-area="" asp-page="/Admin/Roles">Back to List</a>
+    </div>
+</div>
+
+<script>
+
+    $('input[type="text"]').keydown(function () {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+        };
+    });
+
+</script>

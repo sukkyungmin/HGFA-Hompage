@@ -1,0 +1,52 @@
+﻿@page
+@model HangilFA.Pages.Admin.DeleteUserModel
+@{
+    ViewData["Index"] = "9";
+    //ViewData["SubIndex"] = "10";
+}
+
+<link rel="stylesheet" href="~/scss/01_main/Table.css" />
+
+<div style="padding-top:8em;" />
+
+
+<div class="edit-center">
+
+    <h1>계정 삭제</h1>
+    <h2>삭제된 계정은 관계형 테이블에서 전체 삭제되며 복원이 불가능합니다.</h2>
+
+    <div class="col-md-4 div_center">
+        <form method="post">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <input type="hidden" asp-for="userviewmodel.Id" class="form-control" />
+            <div class="form-group group-text">
+                <label asp-for="userviewmodel.FullName" class="control-label"></label>
+                <input asp-for="userviewmodel.FullName" class="form-control" readonly />
+                <span asp-validation-for="userviewmodel.FullName" class="text-danger"></span>
+            </div>
+            <div class="form-group group-text">
+                <label asp-for="userviewmodel.Email" class="control-label"></label>
+                <input asp-for="userviewmodel.Email" class="form-control" readonly />
+                <span asp-validation-for="userviewmodel.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Delete" class="btn btn-primary" />
+            </div>
+        </form>
+        <a asp-area="" asp-page="./Users">Back to List</a>
+    </div>
+</div>
+
+
+
+<script>
+
+    $('input[type="text"]').keydown(function () {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+        };
+    });
+
+</script>
+
+

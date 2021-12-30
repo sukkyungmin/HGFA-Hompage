@@ -1,0 +1,105 @@
+﻿@page
+@model HangilFA.Pages.Support.CreateQuestionsModel
+@{
+    ViewData["Index"] = "6";
+    ViewData["SubIndex"] = "8";
+}
+
+<link rel="stylesheet" href="~/vender/summernote/css/summernote-lite.min.css" />
+
+<script src="~/vender/summernote/js/summernote-lite.min.js"></script>
+
+<div style="padding-top:7em;" />
+
+
+<div style="width: 80%; margin: auto;">
+
+    <h4 style="margin-bottom:1em; text-align:center; color:#808080;">문의사항</h4>
+
+    <form method="post">
+
+        <div>
+            <div class="form-group" style="width:85%; display:inline-block;">
+                @*<label asp-for="Noticesviewmodel.Title" class="control-label"></label>*@
+                <input id="input_text" asp-for="Questionsviewmodel.Title" class="form-control" maxlength="120" placeholder="Title (Max Length 120)" />
+            </div>
+            <div class="form-group" style="width:10%; display:inline-block; float:right;">
+                <input type="hidden" asp-for="Questionsviewmodel.CreateUserId" class="form-control" />
+                <input type="hidden" asp-for="Questionsviewmodel.CreateUser" class="form-control" />
+                <input asp-for="Questionsviewmodel.CreateFullname" class="form-control" style="text-align:center" readonly />
+            </div>
+        </div>
+
+        <div style="text-align:right; margin:0 0 15px 0;">
+            <input type="submit" value="Save" class="btn btn-primary" style="width:10%;" />
+        </div>
+
+        <div style="text-align: right; margin:0 0 15px 0;">
+            <span style="margin-right:7em; color:#383636;">Remaining Text : <span id="maxContentPost">1000</span> </span>
+            <a style="margin-right:34px;" asp-page="/Support/Questions">Back to List</a>
+        </div>
+
+        <textarea asp-for="Questionsviewmodel.Content" id="summernote"></textarea>
+
+        @*<div style="text-align:center; margin-top:2em;">
+            <input type="submit" value="Save" class="btn btn-primary" style="width:150px;" />
+        </div>*@
+    </form>
+</div>
+
+<script>
+    function registerSummernote(element, placeholder, max, callbackMax) {
+        $('#summernote').summernote({
+            tabsize: 1,
+            disableDragAndDrop: true,
+            minHeight: 500,
+            maxHeight: 500,
+            toolbar: [
+                ['fontsize', ['fontsize']],
+                ['font', ['bold', 'underline', 'clear']]
+            ],
+            placeholder,
+            callbacks: {
+                onKeydown: function (e) {
+                    var t = e.currentTarget.innerText;
+                    if (t.length >= max) {
+                        //delete key
+                        if (e.keyCode != 8)
+                            e.preventDefault();
+                        // add other keys ...
+                    }
+                },
+                onKeyup: function (e) {
+                    var t = e.currentTarget.innerText;
+                    if (typeof callbackMax == 'function') {
+                        callbackMax(max - t.length);
+                    }
+                },
+                onPaste: function (e) {
+                    var t = e.currentTarget.innerText;
+                    var bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData('Text');
+                    e.preventDefault();
+                    var all = t + bufferText;
+                    document.execCommand('insertText', false, all.trim().substring(0, 400));
+                    if (typeof callbackMax == 'function') {
+                        callbackMax(max - t.length);
+                    }
+                }
+            }
+        });
+    }
+
+    $(function () {
+        registerSummernote('.summernote', '작성할수 있는 글자수의 제한은 MAX 1000글자 입니다.', 1000, function (max) {
+            $('#maxContentPost').text(max)
+        });
+    });
+
+
+    $('input[type="text"]').keydown(function () {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+        };
+    });
+
+</script>

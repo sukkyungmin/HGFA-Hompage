@@ -1,0 +1,66 @@
+﻿@page
+@model HangilFA.Pages.Admin.UsersModel
+
+@using Microsoft.AspNetCore.Identity
+@using HangilFA.Areas.Identity.Data
+
+@inject UserManager<HangilFAUser> UserManager
+
+@{
+    ViewData["Index"] = "9";
+    //ViewData["SubIndex"] = "10";
+}
+
+
+<link rel="stylesheet" href="~/scss/01_main/Table.min.css" />
+
+<div style="padding-top:5em;" />
+
+<div id="demo">
+    @*<h1>사용자 관리 리스트 목록.</h1>*@
+    <h2>특정 페이지 열람 권한 적용 및 계정 삭제.</h2>
+
+    <!-- Responsive table starts here -->
+    <!-- For correct display on small screens you must add 'data-title' to each 'td' in your table -->
+    <div class="table-responsive-vertical shadow-z-1">
+        <!-- Table starts here -->
+        <table id="table" class="table table-hover table-mc-light-blue">
+            <thead>
+                <tr>
+                    <th>User Name</th>
+                    <th>E-Mail</th>
+                    <th>Create Time</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.userviewmodel)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FullName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Email)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CreateTime)
+                        </td>
+                        @if (@UserManager.GetUserName(User) == "Admin")
+                        {
+                            <td>
+                                <a asp-area="" asp-page="/Admin/EditUser" asp-route-id="@item.Id">Edit</a>
+                            </td>
+                            <td>
+                                <a asp-area="" asp-page="/Admin/DeleteUser" asp-route-id="@item.Id">Delete</a>
+                            </td>
+                        }
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div style="padding-top:4em;" />

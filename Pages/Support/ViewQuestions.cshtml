@@ -1,0 +1,116 @@
+﻿@page
+@model HangilFA.Pages.Support.ViewQuestionsModel
+
+@using Microsoft.AspNetCore.Identity
+@using HangilFA.Areas.Identity.Data
+
+@inject UserManager<HangilFAUser> UserManager
+@{
+    ViewData["Index"] = "6";
+    ViewData["SubIndex"] = "8";
+}
+
+<link rel="stylesheet" href="~/scss/03_Support/Support.min.css" asp-append-version="true" />
+<script src="~/js/support.js" asp-append-version="true"></script>
+
+<div style="padding-top:7em;" />
+
+
+<div style="width: 70%; margin: auto; border:1px solid #E8E8E8; border-radius:5px;">
+    <div style="margin:20px 1% 20px 1%;">
+
+        <h4 style="margin-bottom:1em; text-align:center; color:#4f4e4e;">@Model.questionsviewmodel.Title</h4>
+
+        <div style="text-align:right; margin:0 0 15px 0;">
+            <p style="font-size:15px; color:#5b5a5a;">Create User : @Model.questionsviewmodel.CreateFullname (@Model.questionsviewmodel.CreateTime)</p>
+            <a asp-page="/Support/Questions">Back to List</a>
+        </div>
+
+        <div style="border-bottom:1px solid #E8E8E8; border-top:1px solid #E8E8E8; min-height:300px; margin-bottom:10px;">
+            <div style="margin:20px 10px 20px 10px">
+                @Html.Raw(Model.questionsviewmodel.Content)
+            </div>
+        </div>
+        <div style="margin-bottom:14px;">
+            <span style="font-size:16px;">댓글</span> <span style="font-size:10px; color:#7d7d7d;"> 등록순</span>
+        </div>
+
+        <div class="replywrap">
+            @foreach (var item in Model.questionsanswervreadviewmodel)
+            {
+            <div class="names">
+
+                @if (item.AnswerUser == "Admin")
+                {
+                    <strong>@item.AnswerUser</strong><strong style="font-size:10px; color:#ff4242;"> (관리자)</strong>
+                }
+                else
+                {
+                    if (Model.questionsviewmodel.CreateUserId == item.AnswerUserId)
+                    {
+                        <strong>@item.AnswerUser</strong><strong style="font-size:10px; color:#3f60ff;"> (작성자)</strong>
+                    }
+                    else
+                    {
+                        <strong>@item.AnswerUser</strong>
+                    }
+                }
+
+
+                @if (@UserManager.GetUserName(User) == "Admin" || UserManager.GetUserId(User) == item.AnswerUserId)
+                {
+                    @if (UserManager.GetUserId(User) == item.AnswerUserId)
+                    {
+                        <a asp-area="" asp-page="/Support/DeleteQuestionsAnswer" asp-route-id="@item.Id">Delete</a>
+                        <span>&nbsp&nbsp|&nbsp&nbsp</span>
+                        <a asp-area="" asp-page="/Support/EditQuestionsAnswer" asp-route-id="@item.Id">Edit</a>
+                    }
+                    else
+                    {
+                        <a asp-area="" asp-page="/Support/DeleteQuestionsAnswer" asp-route-id="@item.Id">Delete</a>
+                    }
+                }
+
+            </div>
+
+                <div class="contents">
+                    <pre>@item.Content</pre>
+                    <p>@item.CreateTime</p>
+                </div>
+
+            }
+        </div>
+
+        @*@if (@UserManager.GetUserName(User) == "Admin" || @UserManager.GetUserId(User) == Model.questionsviewmodel.CreateUserId)*@
+            @if (@UserManager.GetUserName(User) != null)
+            {
+                <form method="post">
+                    <div class="wrap">
+                        <div>
+                            <strong>@Model.questionsanswervwriteviewmodel.AnswerUser</strong><span id="textCount">1000 / 0</span>
+                        </div>
+                        <div>
+                            <input type="hidden" asp-for="questionsanswervwriteviewmodel.AnswerUser" class="form-control" />
+                            <input type="hidden" asp-for="questionsanswervwriteviewmodel.AnswerUserId" class="form-control" />
+                            <input type="hidden" asp-for="questionsanswervwriteviewmodel.AnswerUserFullname" class="form-control" />
+                            <input type="hidden" asp-for="questionsanswervwriteviewmodel.SupporQuestionsId" class="form-control" />
+                            <textarea asp-for="questionsanswervwriteviewmodel.Content" placeholder="댓글을 남겨보세요."></textarea>
+                        </div>
+                        <div style="text-align:right; margin:0.5em;">
+                            <input type="submit" value="Save" class="btn btn-primary" style="width:5%;" />
+                        </div>
+                    </div>
+                </form>
+            }
+
+        </div>
+</div>
+
+<div style="padding-top:7em;" />
+
+@*<div style="width: 80%; margin: auto;">
+    @for (int i = 0; i < 10; i++)
+    {
+        <p>안녕하세요 @i 숫자입니다.</p>
+    }
+</div>*@

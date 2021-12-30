@@ -1,0 +1,28 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using HangilFA.Areas.Identity.Data
+
+@inject SignInManager<HangilFAUser> SignInManager
+@inject UserManager<HangilFAUser> UserManager
+
+    <ul class="navbar-nav">
+        @if (SignInManager.IsSignedIn(User))
+        {
+            @*<li class="nav-item">
+                    <a id="manage" class="nav-link text-dark" title="Manage">Hello @UserManager.GetUserName(User)!</a>
+                </li>*@
+            <li class="nav-item"  data-placement="bottom" title="Log Out">
+                <form id="logoutForm" class="form-inline" asp-area="" asp-page="/Logins/Logout" asp-route-returnUrl="@Url.Page("/Index", new { area = "" })">
+                    <button type="submit" class="Out_button">Hello @UserManager.GetUserName(User)!</button>
+                </form>
+            </li>
+        }
+        else
+        {
+            @*<li class="nav-item">
+                    <a class="nav-link text-dark" id="register" asp-area="Identity" asp-page="/Account/Register">Register</a>
+                </li>*@
+            <li class="nav-item">
+                <a class="nav-link text-dark" id="login" asp-area="" asp-page="/Logins/Login">Login</a>
+            </li>
+        }
+    </ul>

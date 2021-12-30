@@ -1,0 +1,84 @@
+﻿@page
+@model HangilFA.Pages.Admin.EditNoticesModel
+@{
+    ViewData["Index"] = "9";
+    //ViewData["SubIndex"] = "11";
+}
+
+@*<div style="padding-top:10em;" />
+
+
+    <div id="Noticescontect" style="width: 80%; margin: auto;">
+     @Html.Raw(Model.noticesViewModel.RichContent)
+    </div>*@
+
+
+
+<link rel="stylesheet" href="~/vender/summernote/css/summernote-lite.min.css" />
+
+<script src="~/vender/summernote/js/summernote-lite.min.js"></script>
+
+<div style="padding-top:7em;" />
+
+
+<div style="width: 80%; margin: auto;">
+
+    <h4 style="margin-bottom:1em; text-align:center; color:#808080;">공지사항 편집 (편집횟수 : @Model.noticesViewModel.ModifyCount 회)</h4>
+
+    <form method="post">
+
+        <div>
+            <div class="form-group" style="width:85%; display:inline-block;">
+                @*<label asp-for="noticesViewModel.Title" class="control-label"></label>*@
+                <input id="input_text" asp-for="noticesViewModel.Title" class="form-control" maxlength="120" placeholder="Title (Max Length 120)" />
+            </div>
+            <div class="form-group" style="width:10%; display:inline-block; float:right;">
+                <input type="hidden" asp-for="noticesViewModel.Id" class="form-control" />
+                <input type="hidden" asp-for="noticesViewModel.ModifyUser" class="form-control" />
+                <input type="hidden" asp-for="noticesViewModel.ModifyFullname" class="form-control" />
+                <input type="hidden" asp-for="noticesViewModel.ModifyCount" class="form-control" />
+                @*<input asp-for="noticesViewModel.CreateFullname" class="form-control" style="text-align:center" readonly />*@
+                <input type="submit" value="Update" class="btn btn-primary" style="width:150px; display:inline-block;" />
+            </div>
+        </div>
+
+        <div style="text-align:right; margin:0 0 15px 0;">
+            <p style="font-size:15px; color:brown;">Create User : @Model.noticesViewModel.CreateFullname (@Model.noticesViewModel.CreateTime)</p>
+            <p style="font-size:15px; color:brown;">Modify User : @Model.noticesViewModel.ModifyFullname (@Model.noticesViewModel.ModifyTime)</p>
+            <a asp-page="/Admin/Notices">Back to List</a>
+        </div>
+
+        <textarea asp-for="noticesViewModel.RichContent" id="summernote"></textarea>
+
+        @*<div style="text-align:center; margin-top:2em;">
+                <input type="submit" value="Save" class="btn btn-primary" style="width:150px;" />
+            </div>*@
+    </form>
+</div>
+
+<script>
+    $('#summernote').summernote({
+        placeholder: '작성할수 있는 글자수의 제한은 MAX로 지정했지만 추후 홈페이지 전체 완성 후 LIMIT 추가합니다.',
+        tabsize: 1,
+        minHeight: 480,
+        maxHeight: 480,
+        toolbar: [
+            ['fontsize', ['fontsize']],
+            ['font', ['bold', 'underline', 'clear']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['table', ['table']],
+            //['picture'],
+            ['help']
+        ]
+    });
+
+    $('input[type="text"]').keydown(function () {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+        };
+    });
+
+</script>
+
+

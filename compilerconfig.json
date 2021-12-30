@@ -1,0 +1,50 @@
+﻿[
+  {
+    "outputFile": "wwwroot/scss/01_main/index.css",
+    "inputFile": "wwwroot/scss/01_main/index.scss"
+  },
+  {
+    "outputFile": "wwwroot/scss/01_main/main.css",
+    "inputFile": "wwwroot/scss/01_main/main.scss"
+  },
+  {
+    "outputFile": "wwwroot/scss/testsheet.css",
+    "inputFile": "wwwroot/scss/testsheet.scss"
+  },
+  {
+    "outputFile": "wwwroot/scss/StyleSheet.css",
+    "inputFile": "wwwroot/scss/StyleSheet.scss"
+  },
+  {
+    "outputFile": "wwwroot/scss/StyleSheet1.css",
+    "inputFile": "wwwroot/scss/StyleSheet1.scss"
+  },
+  {
+    "outputFile": "wwwroot/scss/02_company/product.css",
+    "inputFile": "wwwroot/scss/02_company/product.scss"
+  },
+  {
+    "outputFile": "wwwroot/scss/01_main/logins.css",
+    "inputFile": "wwwroot/scss/01_main/logins.scss"
+  },
+  {
+    "outputFile": "wwwroot/scss/02_company/intro.css",
+    "inputFile": "wwwroot/scss/02_company/intro.scss"
+  },
+  {
+    "outputFile": "wwwroot/scss/01_main/Table.css",
+    "inputFile": "wwwroot/scss/01_main/Table.less"
+  },
+  {
+    "outputFile": "wwwroot/scss/01_main/pageauthority.css",
+    "inputFile": "wwwroot/scss/01_main/pageauthority.scss"
+  },
+  {
+    "outputFile": "wwwroot/scss/03_Support/Support.css",
+    "inputFile": "wwwroot/scss/03_Support/Support.scss"
+  },
+  {
+    "outputFile": "wwwroot/scss/04_utility/utility.css",
+    "inputFile": "wwwroot/scss/04_utility/utility.scss"
+  }
+]

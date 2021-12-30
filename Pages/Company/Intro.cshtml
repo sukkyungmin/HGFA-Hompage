@@ -1,0 +1,198 @@
+﻿@page
+@model HangilFA.Pages.Company.IntroModel
+
+<link rel="stylesheet" href="~/scss/02_company/intro.css" asp-append-version="true"/>
+
+@{
+    ViewData["Index"] = "1";
+    ViewData["SubIndex"] = "2";
+}
+
+<div style="padding-top:2em;" />
+
+<div class="intro-contents end">
+    <div class="intro-slogan-box end">
+        <p class="bold small">신규 개발과 <br class="m-only">기술 혁신을 통해 <br>고객의 미래를 변화시키는 <br class="m-only">솔루션을 제공합니다</p>
+        <p class="txt-normal">
+            한길에프에이 주식회사 (HANGIL FA)는 현재 자동화 설비에 대한 전기/제어 H/W 설계 및 S/W
+            <br class="w-only">프로그래밍이 주력사업이며, 나아가 제어 및 자동화 설비에 대한 제조 계획을 가지고 있습니다.
+            <br />
+            <br>한길FA (HANGIL FA)는 고객의 생산성 향상 및 수익증대에 대한 최적의 솔루션을 제공하기 위해 항상 연구하는 마음자세로 업무에 임하고 있습니다.
+        </p>
+    </div>
+</div>
+
+@*<div class="intro-contents wide bg end">
+        <div class="sub-back-title">
+            <h3 class="bar-type center">개요</h3>
+        </div>
+    </div>*@
+
+
+<div class="intro-contents end">
+    <div class="intro-company-overview blk">
+        <div class="company-overview ico01">
+            <dl>
+                <dt>회사명</dt>
+                <dd><span>한길에프에이㈜</span></dd>
+            </dl>
+        </div>
+        <div class="company-overview ico02">
+            <dl>
+                <dt>설립일</dt>
+                <dd><span>2004</span>년 <span>8</span>월 <span>5</span>일</dd>
+            </dl>
+        </div>
+        <div class="company-overview ico03">
+            <dl>
+                <dt>대표이사</dt>
+                <dd><span>고인철,권오영</span></dd>
+            </dl>
+        </div>
+        @*<div class="company-overview ico04">
+                <dl>
+                    <dt>임직원</dt>
+                    <dd><span>5</span>명 <em class="alpha">(2019년 기준)</em></dd>
+                </dl>
+            </div>*@
+    </div>
+</div>
+
+
+<div class="intro-contents end">
+    <h3 class="bar-type center">Business scope</h3>
+
+    <div class="css-art--3-pie-venn-diagram">
+        <div class="css-art--pie css-art--pie-1">
+            <h3>H/W Manufacture</h3>
+            <ul>
+                <li>제어반</li>
+                <li>자동화 설비 제조 및 제작</li>
+            </ul>
+        </div>
+        @*<div class="pie-1-2-intersect">
+                <h3>
+                    Students and Faculty
+                </h3>
+                <ul>
+                    <li>Support a fellowship</li>
+                    <li>Fund a research project</li>
+                </ul>
+            </div>*@
+        <div class="css-art--pie css-art--pie-2">
+            <h3>S/W Program</h3>
+            <ul>
+                <li>PLC Program</li>
+                <li>HMI Program</li>
+                <li>C#, DB Program</li>
+            </ul>
+        </div>
+        <div class="pie-2-3-intersect imagedisplaymode">
+            <h3>
+                System Design & Program
+            </h3>
+            <ul>
+                <li>자동화 설비에 맞춰진 최적화된 프로그램을 제공합니다.</li>
+            </ul>
+        </div>
+        <div class="css-art--pie css-art--pie-3">
+            <h3>FA System Design</h3>
+            <ul>
+                <li>자동화 설비 전기/제어</li>
+                <li>H/W 설계</li>
+            </ul>
+        </div>
+        <div class="pie-3-1-intersect imagedisplaymode">
+            <h3 class="element-invisible">
+                H/W & System Design
+            </h3>
+            <ul>
+                <li>자동화 설비들의 풍부한 경험을 바탕으로 설계 및 제작에 들어갑니다.</li>
+            </ul>
+        </div>
+        <div class="pie-main-intersection">
+            <h3>What we do</h3>
+            최고의 통합 솔루션을 제공합니다.
+        </div>
+    </div>
+
+</div>
+
+
+<div class="intro-contents end">
+    <h3 class="bar-type center">회사위치</h3>
+
+
+    <div class="map-wrap">
+        <div class="img-wrap">
+            <ul>
+                <li class="location">경기도 화성시 동탄첨단산업1로 27 <br class="w-only-type2">B동 1320호(영천동, 금강펜테리움IX)</li>
+                <li class="call">031.784.8360</li>
+            </ul>
+        </div>
+        <div class="iframe-wrap" id="map" style="width:760px; height:450px;"></div>
+    </div>
+
+</div>
+
+
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2197233df8bac99ebf893ef89a7f9134"></script>
+<script>
+    var container = document.getElementById('map');
+    var options = {
+        center: new kakao.maps.LatLng(37.21100542210049, 127.08938196169836),
+        level: 3
+    };
+
+    var map = new kakao.maps.Map(container, options);
+
+    var zoomControl = new kakao.maps.ZoomControl();
+    map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
+
+    // 지도에 마커를 표시합니다
+    var marker = new kakao.maps.Marker({
+        map: map,
+        position: new kakao.maps.LatLng(37.21100542210049, 127.08938196169836)
+    });
+
+    var content = '<div class="wrap">' +
+        '    <div class="info">' +
+        '        <div class="title">' +
+        '            한길에프에이(주)' +
+        '            <div class="close" onclick="closeOverlay()" title="닫기"></div>' +
+        '        </div>' +
+        '        <div class="body">' +
+        //'            <div class="img">' +
+        //'                <img src="~/images/HGFA_Logo.png" width="73" height="70">' +
+        //                 <img src="http://cfile181.uf.daum.net/image/250649365602043421936D" width="73" height="70">' +
+        //'           </div>' +
+        '            <div class="desc">' +
+        '                <div class="ellipsis">경기도 화성시 동탄첨단산업1로 27</div>' +
+        '                <div class="ellipsis">B동 1320호(영천동, 금강펜테리움IX)</div>' +
+        '                <div class="jibun ellipsis">Tel:031.784.8360</div>' +
+        '                <div class="jibun ellipsis">Fax:031.784.8364</div>' +
+        //'                <div><a href="http://www.kakaocorp.com/main" target="_blank" class="link">홈페이지</a></div>' +
+        '            </div>' +
+        '        </div>' +
+        '    </div>' +
+        '</div>';
+
+    // 마커 위에 커스텀오버레이를 표시합니다
+    // 마커를 중심으로 커스텀 오버레이를 표시하기위해 CSS를 이용해 위치를 설정했습니다
+    var overlay = new kakao.maps.CustomOverlay({
+        content: content,
+        map: map,
+        position: marker.getPosition()
+    });
+
+    // 마커를 클릭했을 때 커스텀 오버레이를 표시합니다
+    kakao.maps.event.addListener(marker, 'click', function () {
+        overlay.setMap(map);
+    });
+
+    // 커스텀 오버레이를 닫기 위해 호출되는 함수입니다
+    function closeOverlay() {
+        overlay.setMap(null);
+    }
+
+</script>

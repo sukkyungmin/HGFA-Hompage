@@ -1,0 +1,97 @@
+﻿@page
+@model HangilFA.Pages.Admin.NoticesModel
+
+@using Microsoft.AspNetCore.Identity
+@using HangilFA.Areas.Identity.Data
+
+@inject UserManager<HangilFAUser> UserManager
+
+@{
+    ViewData["Index"] = "9";
+    //ViewData["SubIndex"] = "11";
+}
+
+<link rel="stylesheet" href="~/scss/01_main/Table.min.css" />
+
+<div style="padding-top:5em;" />
+
+
+<div id="demo" style=" max-width: 80%;">
+    @*<h1>사용자 관리 리스트 목록.</h1>*@
+    <h2>공지사항</h2>
+
+    <!-- Responsive table starts here -->
+    <!-- For correct display on small screens you must add 'data-title' to each 'td' in your table -->
+    <div class="table-responsive-vertical shadow-z-1">
+        <!-- Table starts here -->
+        <table id="table" class="table table-hover table-mc-light-blue">
+            <thead>
+                <tr>
+                    <th style="width:5%;">No</th>
+                    <th>Title</th>
+                    <th style="width:10%;">User</th>
+                    <th style="width:15%;">Date</th>
+                    <th style="width:5%;">Edit</th>
+                    <th style="width:5%;">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{int rowNo = 0; }
+                @foreach (var item in Model.Students)
+                {
+                    <tr>
+                        @if(true)
+                        {
+                            rowNo += 1;
+                        }
+                        <td>
+                            @(Model.Students.TotalNumber - (rowNo - 1))
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Title)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CreateFullname)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CreateTime)
+                        </td>
+                        @if (@UserManager.GetUserName(User) == "Admin" || @UserManager.GetUserName(User) == item.CreateUser)
+                        {
+                            <td>
+                                <a asp-area="" asp-page="/Admin/EditNotices" asp-route-id="@item.Id">Edit</a>
+                            </td>
+                            <td>
+                                <a asp-area="" asp-page="/Admin/DeleteNotices" asp-route-id="@item.Id">Delete</a>
+                            </td>
+                        }
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+
+    @{
+        var prevDisabled = !Model.Students.HasPreviousPage ? "disabled" : "";
+        var nextDisabled = !Model.Students.HasNextPage ? "disabled" : "";
+    }
+
+<div style="text-align:center">
+    <a asp-page="/Admin/Notices"
+       asp-route-pageIndex="@(Model.Students.PageIndex - 1)"
+       class="btn btn-primary @prevDisabled" style="width:130px; margin-left:120px;">
+        Previous
+    </a>
+    <a asp-page="/Admin/Notices"
+       asp-route-pageIndex="@(Model.Students.PageIndex + 1)"
+       class="btn btn-primary @nextDisabled" style="width:130px;">
+        Next
+    </a>
+
+    <a asp-page="/Admin/CreateNotices" class="btn btn-primary" style="float:right; width:120px;">Add List</a>
+</div>
+</div>
+
+
+<div style="padding-top:4em;" />

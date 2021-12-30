@@ -1,0 +1,529 @@
+﻿@page
+@model HangilFA.Pages.Company.HistoryModel
+
+<link rel="stylesheet" href="~/scss/02_company/intro.min.css" />
+
+@{
+    ViewData["Index"] = "1";
+    ViewData["SubIndex"] = "4";
+}
+
+<div style="padding-top:2em;" />
+
+
+<nav class="Quick-navigation Scroll-to-top-visible">
+    <a href="#A" class="Quick-navigation-item">History</a>
+    <a href="#B" class="Quick-navigation-item">2010~4</a>
+    <a href="#C" class="Quick-navigation-item">2005~9</a>
+    <div class="Scroll-progress-indicator"></div>
+</nav>
+
+
+<div class="js-scroll-step" id="A">
+    <h1 class="timelineyear">History</h1>
+    <section class="c-container" style="position: static;">
+        <ul class="timeline">
+            @*<li class="left">
+            <div class="card-view fade-in" data-scroll>
+                <div class="time-thumb-row">
+                    <div class="time-thumb">
+                        <img src="~/images/logos/HGFA_History.png" alt="">
+                    </div>
+                    <div class="time-content">
+                        <h4>한길에프에이(주)</h4>
+                        <time>2010.03 한길FA 아파트형 공장 확장 이전</time>
+                    </div>
+                </div>
+                <img class="width100" src="~/images/PageImage/intro.png" alt="">
+            </div>
+        </li>*@
+            <li class="right">
+                <div class="card-view fade-in" data-scroll>
+                    <div class="time-thumb-row">
+                        <div class="time-thumb">
+                            <img src="~/images/logos/HGFA_History.png" alt="">
+                        </div>
+                        <div class="time-content">
+                            <h4>2021년 한길에프에이(주)</h4>
+                            <time>7월 한길FA 동탄2 아파트형 공장 확장 이전</time>
+                        </div>
+                    </div>
+                    <img class="width50" src="~/images/PageImage/intro.png" alt="">
+                </div>
+            </li>
+            <li class="left">
+                <div class="card-view fade-in" data-scroll>
+                    <div class="time-thumb-row">
+                        <div class="time-thumb">
+                            <img src="~/images/logos/yk.png" alt="">
+                        </div>
+                        <div class="time-content">
+                            <h4>2016년 충주공장</h4>
+                            <time>S/W : AB PLC, Wonderware Intouch</time>
+                        </div>
+                    </div>
+                    <p class="para-14">
+                        - Case Packer PLC Upgrade
+                        <br />- CA05 DMS Galaxy System
+                    </p>
+                    @*<img class="width100" src="https://md-aqil.github.io/images/attractive-beautiful-beauty-1986684.jpg" alt="">*@
+                </div>
+            </li>
+            <li class="right">
+                <div class="card-view fade-in" data-scroll>
+                    <div class="time-thumb-row">
+                        <div class="time-thumb">
+                            <img src="~/images/logos/yk.png" alt="">
+                        </div>
+                        <div class="time-content">
+                            <h4>2016년 대전공장</h4>
+                            <time>S/W : AB PLC, Wonderware Intouch, C# & DB</time>
+                        </div>
+                    </div>
+                    <p class="para-14">
+                        - TJ21(22)Pad Weight 분석 Program작업
+                        <br />- (유아1부) PHS DataTracking System Programming
+                        <br />- 유아2부 K2 Project
+                        <br />- Waste Room Program 분석 및 설계
+                    </p>
+                    @*<img class="width100" src="https://md-aqil.github.io/images/attractive-beautiful-beauty-1986684.jpg" alt="">*@
+                </div>
+            </li>
+            <li class="left">
+                <div class="card-view fade-in" data-scroll>
+                    <div class="time-thumb-row">
+                        <div class="time-thumb">
+                            <img src="~/images/logos/Nalco.png" alt="">
+                        </div>
+                        <div class="time-content">
+                            <h4>2016년 양산</h4>
+                            <time>S/W : AB PLC</time>
+                        </div>
+                    </div>
+                    <p class="para-14">
+                        - Nalco PLC Upgrade System(AA Storage증설)
+                        <br />- Reactor(B08) 이설관련 전기 Program
+                    </p>
+                    @*<img class="width100" src="https://md-aqil.github.io/images/attractive-beautiful-beauty-1986684.jpg" alt="">*@
+                </div>
+            </li>
+            <li class="right">
+                <div class="card-view fade-in" data-scroll>
+                    <div class="time-thumb-row">
+                        <div class="time-thumb">
+                            <img src="~/images/logos/kcc.png" alt="">
+                        </div>
+                        <div class="time-content">
+                            <h4>2016년 여천공장</h4>
+                            <time>S/W : AB PLC</time>
+                        </div>
+                    </div>
+                    <p class="para-14">
+                        - 성형2호기 Multi-Sizer Servo 개선공사
+                        <br />- 성형2호기 BMA 제조 및 투입설비 설치공사 (전기공사)
+                    </p>
+                    @*<img class="width100" src="https://md-aqil.github.io/images/attractive-beautiful-beauty-1986684.jpg" alt="">*@
+                </div>
+            </li>
+            <li class="left">
+                <div class="card-view fade-in" data-scroll>
+                    <div class="time-thumb-row">
+                        <div class="time-thumb">
+                            <img src="~/images/logos/yk.png" alt="">
+                        </div>
+                        <div class="time-content">
+                            <h4>2015년 충주공장</h4>
+                            <time>S/W : AB PLC, Wonderware Intouch</time>
+                        </div>
+                    </div>
+                    <p class="para-14">
+                        - IK-CA08 Raw Material Tracking System
+                        <br />- CA02 Monitor & DMS 개발 및 적용
+                    </p>
+                    @*<img class="width100" src="https://md-aqil.github.io/images/attractive-beautiful-beauty-1986684.jpg" alt="">*@
+                </div>
+            </li>
+            <li class="right">
+                <div class="card-view fade-in" data-scroll>
+                    <div class="time-thumb-row">
+                        <div class="time-thumb">
+                            <img src="~/images/logos/yk.png" alt="">
+                        </div>
+                        <div class="time-content">
+                            <h4>2015년 대전공장</h4>
+                            <time>S/W : AB PLC, Wonderware Intouch, C# & DB</time>
+                        </div>
+                    </div>
+                    <p class="para-14">
+                        - Lawn Project Program 시운전 (C&PS_MONET 통합)
+                        <br />- 유아2팀 Pants Report System 개발
+                        <br />- I2-Product Code Printer 전송 시스템 설계
+                        <br />- I2-Converting Product and Stack Tracking System
+                        <br />- CES-IG-Network Control Module Replacement
+                    </p>
+                    @*<img class="width100" src="https://md-aqil.github.io/images/attractive-beautiful-beauty-1986684.jpg" alt="">*@
+                </div>
+            </li>
+            <li class="left">
+                <div class="card-view fade-in" data-scroll>
+                    <div class="time-thumb-row">
+                        <div class="time-thumb">
+                            <img src="~/images/logos/kc.png" alt="">
+                        </div>
+                        <div class="time-content">
+                            <h4>2015년 KC CHINA(난징)</h4>
+                            <time>S/W : AB PLC, Wonderware Intouch</time>
+                        </div>
+                    </div>
+                    <p class="para-14">
+                        - COMPASS(ND33) PJT PROGRAMMING 시운전
+                        <br />- LAWN(ND05) PJT PROGRAMMING 시운전
+                    </p>
+                    @*<img class="width100" src="https://md-aqil.github.io/images/attractive-beautiful-beauty-1986684.jpg" alt="">*@
+                </div>
+            </li>
+            <li class="right">
+                <div class="card-view fade-in" data-scroll>
+                    <div class="time-thumb-row">
+                        <div class="time-thumb">
+                            <img src="~/images/logos/ssevd2.png" alt="">
+                        </div>
+                        <div class="time-content">
+                            <h4>2015년 에버랜드</h4>
+                            <time>S/W : AB PLC</time>
+                        </div>
+                    </div>
+                    <p class="para-14">
+                        - Thunder Falls HMI 모니터링 시스템
+                    </p>
+                    @*<img class="width100" src="https://md-aqil.github.io/images/attractive-beautiful-beauty-1986684.jpg" alt="">*@
+                </div>
+            </li>
+            <li class="left">
+                <div class="card-view fade-in" data-scroll>
+                    <div class="time-thumb-row">
+                        <div class="time-thumb">
+                            <img src="~/images/logos/kcc.png" alt="">
+                        </div>
+                        <div class="time-content">
+                            <h4>2015년 여천공장</h4>
+                            <time>S/W : MITSUBISHI PLC</time>
+                        </div>
+                    </div>
+                    <p class="para-14">
+                        - KCC 여천공장 성형2호기 전환공정 제어시스템(#600서보교체)
+                    </p>
+                    @*<img class="width100" src="https://md-aqil.github.io/images/attractive-beautiful-beauty-1986684.jpg" alt="">*@
+                </div>
+            </li>
+        </ul>
+    </section>
+</div>
+
+<div class="js-scroll-step" id="B">
+    <h1 class="timelineyear">2010~4</h1>
+    <section class="c-container" style="position: static;">
+        <ul class="timeline">
+            <li class="right">
+                <div class="card-view fade-in" data-scroll>
+                    <div class="time-thumb-row">
+                        <div class="time-thumb">
+                            <img src="~/images/logos/yk.png" alt="">
+                        </div>
+                        <div class="time-content">
+                            <h4>2014년 대전공장</h4>
+                            <time>S/W : AB PLC, Wonderware Intouch, C# & DB</time>
+                        </div>
+                    </div>
+                    <p class="para-14">
+                        - IG-Real time 원부자재 및 Waste Report 프로그램
+                        <br />- #4 M/C ADHESIVE SYSTEM UPGRADE
+                        <br />- HMI Engineering including var. expense
+                        <br />- SMC 약액투입 정보시스템 DB작업 / 프로그래밍작업
+                    </p>
+                    @*<img class="width100" src="https://md-aqil.github.io/images/attractive-beautiful-beauty-1986684.jpg" alt="">*@
+                </div>
+            </li>
+            <li class="left">
+                <div class="card-view fade-in" data-scroll>
+                    <div class="time-thumb-row">
+                        <div class="time-thumb">
+                            <img src="~/images/logos/kc.png" alt="">
+                        </div>
+                        <div class="time-content">
+                            <h4>2014년 KC CHINA(난징)</h4>
+                            <time>S/W : AB PLC</time>
+                        </div>
+                    </div>
+                    <p class="para-14">
+                        - KC CHINA ND05,06 ONLINE SOAR
+                    </p>
+                    @*<img class="width100" src="https://md-aqil.github.io/images/attractive-beautiful-beauty-1986684.jpg" alt="">*@
+                </div>
+            </li>
+            <li class="right">
+                <div class="card-view fade-in" data-scroll>
+                    <div class="time-thumb-row">
+                        <div class="time-thumb">
+                            <img src="~/images/logos/kc.png" alt="">
+                        </div>
+                        <div class="time-content">
+                            <h4>2014년 KC AUSTRALIA</h4>
+                            <time>S/W : AB PLC</time>
+                        </div>
+                    </div>
+                    <p class="para-14">
+                        - IA9 MANLY FLEX CLX PROGRAMMING
+                    </p>
+                    @*<img class="width100" src="https://md-aqil.github.io/images/attractive-beautiful-beauty-1986684.jpg" alt="">*@
+                </div>
+            </li>
+            <li class="left">
+                <div class="card-view fade-in" data-scroll>
+                    <div class="time-thumb-row">
+                        <div class="time-thumb">
+                            <img src="~/images/logos/kcc.png" alt="">
+                        </div>
+                        <div class="time-content">
+                            <h4>2014년 대죽1공장</h4>
+                            <time>S/W : AB PLC</time>
+                        </div>
+                    </div>
+                    <p class="para-14">
+                        - #2 CI-303 INVERTER 운전 PLC
+                    </p>
+                    @*<img class="width100" src="https://md-aqil.github.io/images/attractive-beautiful-beauty-1986684.jpg" alt="">*@
+                </div>
+            </li>
+            <li class="right">
+                <div class="card-view fade-in" data-scroll>
+                    <div class="time-thumb-row">
+                        <div class="time-thumb">
+                            <img src="~/images/logos/kcc.png" alt="">
+                        </div>
+                        <div class="time-content">
+                            <h4>2014년 여천공장</h4>
+                            <time>S/W : MITSUBISHI PLC</time>
+                        </div>
+                    </div>
+                    <p class="para-14">
+                        - 성형2&3호기 조절단 원점복귀
+                    </p>
+                    @*<img class="width100" src="https://md-aqil.github.io/images/attractive-beautiful-beauty-1986684.jpg" alt="">*@
+                </div>
+            </li>
+            <li class="left">
+                <div class="card-view fade-in" data-scroll>
+                    <div class="time-thumb-row">
+                        <div class="time-thumb">
+                            <img src="~/images/logos/yk.png" alt="">
+                        </div>
+                        <div class="time-content">
+                            <h4>2013년 대전공장</h4>
+                            <time>S/W : AB PLC, Wonderware Intouch</time>
+                        </div>
+                    </div>
+                    <p class="para-14">
+                        - Solution Mix ECO Converting Main ECO
+                        <br />- I2, Reporting System
+                        <br />- RENOIR Engineering
+                    </p>
+                    @*<img class="width100" src="https://md-aqil.github.io/images/attractive-beautiful-beauty-1986684.jpg" alt="">*@
+                </div>
+            </li>
+            <li class="right">
+                <div class="card-view fade-in" data-scroll>
+                    <div class="time-thumb-row">
+                        <div class="time-thumb">
+                            <img src="~/images/logos/khhh.png" alt="">
+                        </div>
+                        <div class="time-content">
+                            <h4>2013년 금호석유화학</h4>
+                            <time>S/W : SIEMENS PLC, Wonderware Intouch</time>
+                        </div>
+                    </div>
+                    <p class="para-14">
+                        - CHP-S1 수처리 증설공사
+                    </p>
+                    @*<img class="width100" src="https://md-aqil.github.io/images/attractive-beautiful-beauty-1986684.jpg" alt="">*@
+                </div>
+            </li>
+            <li class="left">
+                <div class="card-view fade-in" data-scroll>
+                    <div class="time-thumb-row">
+                        <div class="time-thumb">
+                            <img src="~/images/logos/ssevd2.png" alt="">
+                        </div>
+                        <div class="time-content">
+                            <h4>2012년 에버랜드</h4>
+                            <time>S/W : AB PLC, RSView32</time>
+                        </div>
+                    </div>
+                    <p class="para-14">
+                        - 어트랙션 고장해석 시스탬 개발 및 설치
+                    </p>
+                    @*<img class="width100" src="https://md-aqil.github.io/images/attractive-beautiful-beauty-1986684.jpg" alt="">*@
+                </div>
+            </li>
+            <li class="right">
+                <div class="card-view fade-in" data-scroll>
+                    <div class="time-thumb-row">
+                        <div class="time-thumb">
+                            <img src="~/images/logos/lg.png" alt="">
+                        </div>
+                        <div class="time-content">
+                            <h4>2012년 히다찌</h4>
+                            <time>S/W : LS PLC, RSView32</time>
+                        </div>
+                    </div>
+                    <p class="para-14">
+                        - 구미시 하수재이용 UF PILOT SKID 제작
+                    </p>
+                    @*<img class="width100" src="https://md-aqil.github.io/images/attractive-beautiful-beauty-1986684.jpg" alt="">*@
+                </div>
+            </li>
+            <li class="left">
+                <div class="card-view fade-in" data-scroll>
+                    <div class="time-thumb-row">
+                        <div class="time-thumb">
+                            <img src="~/images/logos/HGFA_History.png" alt="">
+                        </div>
+                        <div class="time-content">
+                            <h4>2012년 한길에프에이(주)</h4>
+                            <time>한길에프에이 주식회사 설립 & 5월 법인전환</time>
+                        </div>
+                    </div>
+                    @*<img class="width100" src="https://md-aqil.github.io/images/attractive-beautiful-beauty-1986684.jpg" alt="">*@
+                </div>
+            </li>
+            <li class="right">
+                <div class="card-view fade-in" data-scroll>
+                    <div class="time-thumb-row">
+                        <div class="time-thumb">
+                            <img src="~/images/logos/HGFA_History.png" alt="">
+                        </div>
+                        <div class="time-content">
+                            <h4>2010년 한길에프에이(주)</h4>
+                            <time>3월 한길FA 아파트형 공장 확장 이전</time>
+                        </div>
+                    </div>
+                    <img class="width100" src="~/images/PageImage/intro_Old.png" alt="">
+                </div>
+            </li>
+        </ul>
+    </section>
+</div>
+
+<div class="js-scroll-step" id="C">
+    <h1 class="timelineyear">2005~9</h1>
+    <section class="c-container" style="position: static;">
+        <ul class="timeline">
+            <li class="left">
+                <div class="card-view fade-in" data-scroll>
+                    <div class="time-thumb-row">
+                        <div class="time-thumb">
+                            <img src="~/images/logos/HGFA_History.png" alt="">
+                        </div>
+                        <div class="time-content">
+                            <h4>2009년 한길에프에이(주)</h4>
+                            <time>업체등록</time>
+                        </div>
+                    </div>
+                    <p class="para-14">
+                        - 2009. 11 (주)KCC 본사 업체 등록
+                    </p>
+                    @*<img class="width100" src="https://md-aqil.github.io/images/attractive-beautiful-beauty-1986684.jpg" alt="">*@
+                </div>
+            </li>
+            <li class="right">
+                <div class="card-view fade-in" data-scroll>
+                    <div class="time-thumb-row">
+                        <div class="time-thumb">
+                            <img src="~/images/logos/HGFA_History.png" alt="">
+                        </div>
+                        <div class="time-content">
+                            <h4>2006년 한길에프에이(주)</h4>
+                            <time>업체등록</time>
+                        </div>
+                    </div>
+                    <p class="para-14">
+                        - 2006. 06 삼성에버랜드(주) 업체 등록
+                    </p>
+                    @*<img class="width100" src="https://md-aqil.github.io/images/attractive-beautiful-beauty-1986684.jpg" alt="">*@
+                </div>
+            </li>
+            <li class="left">
+                <div class="card-view fade-in" data-scroll>
+                    <div class="time-thumb-row">
+                        <div class="time-thumb">
+                            <img src="~/images/logos/HGFA_History.png" alt="">
+                        </div>
+                        <div class="time-content">
+                            <h4>2006년 한길에프에이(주)</h4>
+                            <time>5월 한길FA 확장 이전(경기 수원 영통 소재)</time>
+                        </div>
+                    </div>
+                    @*<img class="width100" src="https://md-aqil.github.io/images/attractive-beautiful-beauty-1986684.jpg" alt="">*@
+                </div>
+            </li>
+            <li class="right">
+                <div class="card-view fade-in" data-scroll>
+                    <div class="time-thumb-row">
+                        <div class="time-thumb">
+                            <img src="~/images/logos/HGFA_History.png" alt="">
+                        </div>
+                        <div class="time-content">
+                            <h4>2005년 한길에프에이(주)</h4>
+                            <time>업체등록</time>
+                        </div>
+                    </div>
+                    <p class="para-14">
+                        - 2005. 03 한솔케미칼 업체등록
+                        <br /> - 2005. 03 삼성엔지니어링㈜ 업체 등록
+                        <br /> - 2005. 05 두산메카텍㈜ 업체 등록
+                        <br /> - 2005. 05 대형정밀㈜ 업체 등록 (유한킴벌리 기계업체)
+
+                    </p>
+                    @*<img class="width100" src="https://md-aqil.github.io/images/attractive-beautiful-beauty-1986684.jpg" alt="">*@
+                </div>
+            </li>
+            <li class="left">
+                <div class="card-view fade-in" data-scroll>
+                    <div class="time-thumb-row">
+                        <div class="time-thumb">
+                            <img src="~/images/logos/HGFA_History.png" alt="">
+                        </div>
+                        <div class="time-content">
+                            <h4>2004년 한길에프에이(주)</h4>
+                            <time>업체등록</time>
+                        </div>
+                    </div>
+                    <p class="para-14">
+                        - 2004. 09 ㈜대한송유관공사  업체 등록
+                        <br /> - 2004. 12 글로벌텍㈜ 업체 등록
+                        <br /> - 2004. 12 ㈜KCC 업체 등록 (여천/대죽/전주1공장)
+                    </p>
+                    @*<img class="width100" src="https://md-aqil.github.io/images/attractive-beautiful-beauty-1986684.jpg" alt="">*@
+                </div>
+            </li>
+            <li class="right">
+                <div class="card-view fade-in" data-scroll>
+                    <div class="time-thumb-row">
+                        <div class="time-thumb">
+                            <img src="~/images/logos/HGFA_History.png" alt="">
+                        </div>
+                        <div class="time-content">
+                            <h4>2004년 한길에프에이(주)</h4>
+                            <time>8월 한길FA 설립(경기 수원 권선 소재)</time>
+                        </div>
+                    </div>
+                    @*<img class="width100" src="https://md-aqil.github.io/images/attractive-beautiful-beauty-1986684.jpg" alt="">*@
+                </div>
+            </li>
+        </ul>
+    </section>
+</div>
+
+
+
+<div style="padding-top:10em;" />

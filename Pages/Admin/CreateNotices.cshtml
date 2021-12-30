@@ -1,0 +1,74 @@
+﻿@page
+@model HangilFA.Pages.Admin.CreateNoticesModel
+@{
+    ViewData["Index"] = "9";
+    //ViewData["SubIndex"] = "11";
+}
+
+<link rel="stylesheet" href="~/vender/summernote/css/summernote-lite.min.css" />
+
+<script src="~/vender/summernote/js/summernote-lite.min.js"></script>
+
+<div style="padding-top:7em;" />
+
+
+<div style="width: 80%; margin: auto;">
+
+    <h4 style="margin-bottom:1em; text-align:center; color:#808080;">공지사항 작성</h4>
+
+    <form method="post">
+
+        <div>
+            <div class="form-group" style="width:85%; display:inline-block;">
+                @*<label asp-for="Noticesviewmodel.Title" class="control-label"></label>*@
+                <input id="input_text" asp-for="Noticesviewmodel.Title" class="form-control" maxlength="120" placeholder="Title (Max Length 120)" />
+            </div>
+            <div class="form-group" style="width:10%; display:inline-block; float:right;">
+                <input type="hidden" asp-for="Noticesviewmodel.CreateUser" class="form-control" />
+                <input asp-for="Noticesviewmodel.CreateFullname" class="form-control" style="text-align:center" readonly />
+            </div>
+        </div>
+
+        <div style="text-align:right; margin:0 0 15px 0;">
+            <input type="submit" value="Save" class="btn btn-primary" style="width:10%;" />
+        </div>
+        <div style="text-align: right; margin:0 0 15px 0;" >
+            <a style="margin-right:34px;" asp-page="/Admin/Notices">Back to List</a>
+        </div>
+
+        <textarea asp-for="Noticesviewmodel.RichContent" id="summernote"></textarea>
+
+        @*<div style="text-align:center; margin-top:2em;">
+            <input type="submit" value="Save" class="btn btn-primary" style="width:150px;" />
+        </div>*@
+    </form>
+</div>
+
+<script>
+    $('#summernote').summernote({
+        placeholder: '작성할수 있는 글자수의 제한은 MAX로 지정했지만 추후 홈페이지 전체 완성 후 LIMIT 추가합니다.', 
+        tabsize: 1,
+        disableDragAndDrop: true,
+        minHeight: 500,
+        maxHeight: 500,
+        toolbar: [
+            ['fontsize', ['fontsize']],
+            ['font', ['bold', 'underline', 'clear']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['table', ['table']],
+            //['picture'],
+            ['help']
+        ]
+    });
+
+
+    $('input[type="text"]').keydown(function () {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+        };
+    });
+
+</script>
+
+

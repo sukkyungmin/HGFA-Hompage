@@ -1,0 +1,74 @@
+﻿@model List<HangilFA.Model.NavigationMenuViewModel>
+@{
+    ViewData["Title"] = "NavigationMenu";
+}
+<a asp-area="" asp-page="/Index" style="max-width:100px;">
+    <img src="~/images/logos/HGFA_Logo.png" style="height:40%; width:100%;" />
+</a>
+
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav  menu-left" style="margin-left:auto; margin-right:auto;">
+        <li>
+            <a href="#">Company<i class="fa fa-angle-down"></i></a>
+            <ul class="dropdown-menu dropdown-content">
+                <li><a asp-area="" asp-page="/Company/Intro">개요</a></li>
+                <li><a asp-area="" asp-page="/Company/Vision">비전</a></li>
+                <li><a asp-area="" asp-page="/Company/History">역사</a></li>
+            </ul>
+        </li>
+        <li><a asp-area="" asp-page="/Product/Gallery">Product</a></li>
+        <li><a asp-area="" asp-page="/Fileupload/Fileuploads">File</a></li>
+        @*<li><a asp-area="" asp-page="/Fileupload/TestFile">File</a></li>*@
+        @*<li><a asp-area="" asp-page="/Document/HgfaDocument">Support</a></li>*@
+        <li>
+            <a href="#">Support<i class="fa fa-angle-down"></i></a>
+            <ul class="dropdown-menu dropdown-content">
+                <li><a asp-area="" asp-page="/Support/Notice">공지사항</a></li>
+                <li><a asp-area="" asp-page="/Support/Questions">게시판</a></li>
+            </ul>
+        </li>
+        @foreach (var item in Model)
+        {
+            if (item.ParentMenuId == null) //Level one items will have null parent id
+            {
+                if (!string.IsNullOrWhiteSpace(item.ControllerName))
+                {
+                    <li class="nav-item active">
+                        <a class="nav-link text" asp-area="@item.Area" asp-controller="@item.ControllerName" asp-action="@item.ActionName">@item.Name</a>
+                    </li>
+                }
+                if (item.IsExternal && !string.IsNullOrWhiteSpace(item.ExternalUrl))
+                {
+                    <li class="nav-item active">
+                        <a target="_blank" class="nav-link text" href="@item.ExternalUrl">@item.Name</a>
+                    </li>
+                }
+                var children = Model.Where(x => x.ParentMenuId == item.Id && x.Visible).OrderBy(x => x.DisplayOrder).ToList();
+                if (children != null)
+                {
+                    <li>
+                        <a href="#">@item.Name <i class="fa fa-angle-down"></i></a>
+                        <ul class="dropdown-menu dropdown-content">
+                            @foreach (var itm in children)
+                            {
+                                if (itm.IsExternal && !string.IsNullOrWhiteSpace(itm.ExternalUrl) && itm.DisplayOrder < 2)
+                                {
+                                    <li><a target="_blank" href="@itm.ExternalUrl">@itm.Name</a></li>
+                                }
+                                else
+                                {
+                                    <li><a asp-area="@itm.Area" asp-page="@string.Format("/{0}/{1}",@itm.ControllerName,@itm.ActionName)">@itm.Name</a></li>
+                                }
+                            }
+                        </ul>
+                    </li>
+                }
+            }
+        }
+    </ul>
+    <partial name="_loginPartial" />
+</div>

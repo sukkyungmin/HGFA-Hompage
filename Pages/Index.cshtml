@@ -1,0 +1,302 @@
+﻿@page
+@model HangilFA.Pages.IndexModel
+
+<link rel="stylesheet" href="~/scss/01_main/index.min.css" />
+
+@{
+    ViewData["index"] = "0";
+    ViewData["SubIndex"] = "0";
+}
+
+<div style="padding-top:4.5em;" />
+
+@*<div class="step-box imagedisplaymode">
+        <div class="step-state step2-ing">
+            <ul>
+                <li><p>Web development</p></li>
+                <li><p>20%<span>MenuBar</span></p></li>
+                <li><p>50%<span>Main Home</span></p></li>
+                <li><p>80%<span>Sub-1</span></p></li>
+                <li><p>100%<span>Sub-2</span></p></li>
+            </ul>
+        </div>
+    </div>*@
+
+@*<div class="imagedisplaymode" style="font-size:10px; position: fixed; top: 11%; right:0;">
+        <img style="max-height:100%; max-width:100%; margin-right:15px" src="@Url.Content(imagePath)"
+             title="수원시 영통구 영통2동(X61, Y120) 기상청 업데이트(30분 간격)&#10;
+    마지막 업데이트 시간 : @ViewData["Times"]&#10;
+    하늘상태 : @ViewData["SKY"]&#10;
+    기온 : @ViewData["T1H"]&#10;
+    습도 : @ViewData["REH"]" />
+        <p style="margin-left:15%">@ViewData["Notimg"]</p>
+    </div>*@
+
+@*<div class="col-xs-12 col-sm-4 img-hvr hvr-2">
+        <img src="~/images/logos/hgfa_main_02.png" />
+        <div class="text">
+            <h4>Hello</h4>
+            <p>is it me you're looking for?</p>
+        </div>
+    </div>*@
+
+
+<div class="mainmigstyle">
+    <img class="wave-container" src="~/images/PageImage/hgfa_main_03.png" />
+    <div class="imgtext" data-aos="fade-up" data-aos-delay="500" data-aos-duration="1200">
+        <p><span><strong><span>Fourth</span></strong></span></p>
+        <p>
+            <span>
+                <strong><span>Industrial Revolution</span></strong>
+            </span>
+        </p>
+        <div data-aos="fade-left" data-aos-delay="2000" data-aos-duration="1200">
+            <p>
+                <span>
+                    <strong><span>한길에프에이와 함께 합니다. </span></strong>
+                </span>
+            </p>
+        </div>
+    </div>
+</div>
+
+@*  ================ 추후에 중간 하이링크 아이템으로 사용가능함 ========================================
+    <div data-aos="zoom-in" data-aos-delay="300" data-aos-duration="1000" data-aos-offset="100">
+
+        <div class="widget _text_wrap widget_text_wrap fr-view  default_padding " style="margin:5% 0 1% 0;">
+            <div class="text-table ">
+                <div>
+                    <p style="text-align: center;"><span style="font-size: 30px;"><strong><span style="color: #1B295A;">Hangil-FA</span></strong></span></p>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align:center;">
+            <figure class="snip1401">
+                <img src="~/images/PageImage/intro.png" alt="sample67" />
+                <h2>개요</h2>
+                <figcaption>
+                    <h3>개요</h3>
+                    <p>미래가치를 창출하는 한길에프에이 주식회사를 소개합니다.</p>
+                    <a asp-area="" asp-controller="Company" asp-action="intro">바로가기.</a>
+                </figcaption><i class="ion-ios-home-outline"></i>
+            </figure>
+            <figure class="snip1401">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample93.jpg" alt="sample93" />
+                <h2>비전</h2>
+                <figcaption>
+                    <h3>비전</h3>
+                    <p>산업혁명에 발맞춰 혁신을 중시하는 기업이 되겠습니다.</p>
+                    <a href="#none" id="one" class="button z_index_0">바로가기.</a>
+                </figcaption><i class="ion-ios-personadd-outline"></i>
+                <a asp-area="" asp-controller="Company" asp-action="vision">바로가기.</a>
+            </figure>
+            <figure class="snip1401">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample87.jpg" alt="sample87" />
+                <h2>역사</h2>
+                <figcaption>
+                    <h3>역사</h3>
+                    <p>기존의 20년보다 새로운 20년을 만들어 갑니다.</p>
+                    <a href="#none" id="one" class="button z_index_0">바로가기.</a>
+                </figcaption><i class="fa fa-spinner"></i>
+                <a asp-area="" asp-controller="Company" asp-action="history">바로가기.</a>
+            </figure>
+        </div>
+    </div>
+*@
+
+
+
+<div data-aos="zoom-in" data-aos-delay="300" data-aos-duration="1000" data-aos-offset="150">
+
+    <div class="widget _text_wrap widget_text_wrap fr-view  default_padding " style="margin:1% 0 1% 0;">
+        <div class="text-table ">
+            <div>
+                <p style="text-align: center;"><span style="font-size: 30px;"><strong><span style="color: #1B295A;">Hangil-FA</span></strong></span></p>
+            </div>
+        </div>
+    </div>
+
+    <main class="page-content">
+
+        <div class="card">
+            <div class="content">
+                <h2 class="title">개요</h2>
+                <p class="copy">미래가치를 창출하는 한길에프에이 주식회사를 소개합니다.</p>
+                <a class="btn btn-1" asp-area="" asp-page="/Company/intro">View Pages.</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="content">
+                <h2 class="title">비전</h2>
+                <p class="copy">산업혁명에 발맞춰 혁신을 중시하는 기업이 되겠습니다.</p>
+                <a class="btn" asp-area="" asp-page="/Company/vision">View Pages.</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="content">
+                <h2 class="title">역사</h2>
+                <p class="copy">기존의 20년보다 새로운 20년을 만들어 갑니다.</p>
+                <a class="btn" asp-area="" asp-page="/Company/history">View Pages.</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="content">
+                <h2 class="title">공지</h2>
+                <p class="copy">한길에프에이 공지사항을 함께 확인하십시요.</p>
+                <a class="btn" asp-area="" asp-page="/Support/Notice">View Pages.</a>
+            </div>
+        </div>
+
+    </main>
+
+</div>
+
+
+
+<div class="div-set" data-aos="flip-left" data-aos-delay="300" data-aos-duration="1000" data-aos-offset="200">
+
+    <div class="widget _text_wrap widget_text_wrap fr-view  default_padding " style="margin:5% 0 1% 0;">
+        <div class="text-table ">
+            <div>
+                <p style="text-align: center;"><span style="font-size: 30px;"><strong><span style="color: #1B295A;">News</span></strong></span></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="ziehharmonika">
+        <p class="p-set">2020-03-12</p>
+        <h3 data-prefix="★" class="">News Top5 표시</h3>
+        <div style="">
+            <p>상위 5개의 내용만 표시됩니다.</p>
+        </div>
+
+        <p class="p-set">2020-03-12</p>
+        <h3 data-prefix="★">MS-SQL 연결완료</h3>
+        <div style="">
+            <p>MS-SQL 연결완료. 추후 게시판 연동.</p>
+        </div>
+
+        <p class="p-set">2020-03-12</p>
+        <h3 data-prefix="★">Item Test1</h3>
+        <div style="">
+            <p>Item Test1.</p>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="imagedisplaymode">
+    <p class="banner_p">Factory Automation을 선도하는 기업들과 함께합니다.</p>
+
+    <div class="banner_wraper">
+        <img src="~/images/logos/dhpc.png" />
+        <img src="~/images/logos/dsm.png" />
+        <img src="~/images/logos/global.png" />
+        <img src="~/images/logos/hk.png" />
+        <img src="~/images/logos/kcc.png" />
+        <img src="~/images/logos/khhh.png" />
+        <img src="~/images/logos/lg.png" />
+        <img src="~/images/logos/sseng.png" />
+        <img src="~/images/logos/ssevd2.png" />
+        <img src="~/images/logos/yk.png" />
+    </div>
+</div>
+
+<nav class="social imagedisplaymode" style="z-index:1;">
+    <ul>
+        <li class="google-plus">
+            <a href="https://www.google.com/" target="_blank">
+                Google
+                <i class="fa fa-google" aria-hidden="true"></i>
+            </a>
+        </li>
+        <li class="naver">
+            <a href="https://www.naver.com" target="_blank">
+                Naver
+                <img src="~/images/logos/naver.png" />
+            </a>
+        </li>
+        <li class="twitter">
+            <a href="https://twitter.com/" target="_blank">
+                Twitter
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+@* Snow *@
+@*<div class="snow">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 738" preserveAspectRatio="xMidYMax slice">
+            <g fill="#FFF" fill-opacity=".15" transform="translate(55 42)">
+                <g id="snow-bottom-layer">
+                    <ellipse cx="6" cy="1009.5" rx="6" ry="5.5" />
+                    <ellipse cx="138" cy="1110.5" rx="6" ry="5.5" />
+                    <ellipse cx="398" cy="1055.5" rx="6" ry="5.5" />
+                    <ellipse cx="719" cy="1284.5" rx="6" ry="5.5" />
+                    <ellipse cx="760" cy="1155.5" rx="6" ry="5.5" />
+                    <ellipse cx="635" cy="1459.5" rx="6" ry="5.5" />
+                    <ellipse cx="478" cy="1335.5" rx="6" ry="5.5" />
+                    <ellipse cx="322" cy="1414.5" rx="6" ry="5.5" />
+                    <ellipse cx="247" cy="1234.5" rx="6" ry="5.5" />
+                    <ellipse cx="154" cy="1425.5" rx="6" ry="5.5" />
+                    <ellipse cx="731" cy="773.5" rx="6" ry="5.5" />
+                    <ellipse cx="599" cy="874.5" rx="6" ry="5.5" />
+                    <ellipse cx="339" cy="819.5" rx="6" ry="5.5" />
+                    <ellipse cx="239" cy="1004.5" rx="6" ry="5.5" />
+                    <ellipse cx="113" cy="863.5" rx="6" ry="5.5" />
+                    <ellipse cx="102" cy="1223.5" rx="6" ry="5.5" />
+                    <ellipse cx="395" cy="1155.5" rx="6" ry="5.5" />
+                    <ellipse cx="826" cy="943.5" rx="6" ry="5.5" />
+                    <ellipse cx="626" cy="1054.5" rx="6" ry="5.5" />
+                    <ellipse cx="887" cy="1366.5" rx="6" ry="5.5" />
+                    <ellipse cx="6" cy="241.5" rx="6" ry="5.5" />
+                    <ellipse cx="138" cy="342.5" rx="6" ry="5.5" />
+                    <ellipse cx="398" cy="287.5" rx="6" ry="5.5" />
+                    <ellipse cx="719" cy="516.5" rx="6" ry="5.5" />
+                    <ellipse cx="760" cy="387.5" rx="6" ry="5.5" />
+                    <ellipse cx="635" cy="691.5" rx="6" ry="5.5" />
+                    <ellipse cx="478" cy="567.5" rx="6" ry="5.5" />
+                    <ellipse cx="322" cy="646.5" rx="6" ry="5.5" />
+                    <ellipse cx="247" cy="466.5" rx="6" ry="5.5" />
+                    <ellipse cx="154" cy="657.5" rx="6" ry="5.5" />
+                    <ellipse cx="731" cy="5.5" rx="6" ry="5.5" />
+                    <ellipse cx="599" cy="106.5" rx="6" ry="5.5" />
+                    <ellipse cx="339" cy="51.5" rx="6" ry="5.5" />
+                    <ellipse cx="239" cy="236.5" rx="6" ry="5.5" />
+                    <ellipse cx="113" cy="95.5" rx="6" ry="5.5" />
+                    <ellipse cx="102" cy="455.5" rx="6" ry="5.5" />
+                    <ellipse cx="395" cy="387.5" rx="6" ry="5.5" />
+                    <ellipse cx="826" cy="175.5" rx="6" ry="5.5" />
+                    <ellipse cx="626" cy="286.5" rx="6" ry="5.5" />
+                    <ellipse cx="887" cy="598.5" rx="6" ry="5.5" />
+                </g>
+            </g>
+            <g fill="#FFF" fill-opacity=".3" transform="translate(65 63)">
+                <g id="snow-top-layer">
+                    <circle cx="8" cy="776" r="8" />
+                    <circle cx="189" cy="925" r="8" />
+                    <circle cx="548" cy="844" r="8" />
+                    <circle cx="685" cy="1115" r="8" />
+                    <circle cx="858" cy="909" r="8" />
+                    <circle cx="874" cy="1438" r="8" transform="rotate(180 874 1438)" />
+                    <circle cx="657" cy="1256" r="8" transform="rotate(180 657 1256)" />
+                    <circle cx="443" cy="1372" r="8" transform="rotate(180 443 1372)" />
+                    <circle cx="339" cy="1107" r="8" transform="rotate(180 339 1107)" />
+                    <circle cx="24" cy="1305" r="8" transform="rotate(180 24 1305)" />
+                    <circle cx="8" cy="8" r="8" />
+                    <circle cx="189" cy="157" r="8" />
+                    <circle cx="548" cy="76" r="8" />
+                    <circle cx="685" cy="347" r="8" />
+                    <circle cx="858" cy="141" r="8" />
+                    <circle cx="874" cy="670" r="8" transform="rotate(180 874 670)" />
+                    <circle cx="657" cy="488" r="8" transform="rotate(180 657 488)" />
+                    <circle cx="443" cy="604" r="8" transform="rotate(180 443 604)" />
+                    <circle cx="339" cy="339" r="8" transform="rotate(180 339 339)" />
+                    <circle cx="24" cy="537" r="8" transform="rotate(180 24 537)" />
+                </g>
+            </g>
+        </svg>
+    </div>*@

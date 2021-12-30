@@ -1,0 +1,404 @@
+﻿@page
+@model HangilFA.Pages.Company.VisionModel
+@*<script src="~/vender/fullpage/js/fullpage.js"></script>
+
+    <link rel="stylesheet" href="~/vender/fullpage/css/fullpage.css" />*@
+<link rel="stylesheet" href="~/scss/02_company/intro.css" />
+
+@*<script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TimelineLite.min.js"></script>*@
+
+
+@{
+    ViewData["Index"] = "1";
+    ViewData["SubIndex"] = "3";
+}
+
+<div style="padding-top:10em;" />
+
+@*추후에 Full Page 적용할때 사용하기
+    <div id="fullpage">
+        <div class="section fullpagefirst" style="width:100vw; height:100vh; background-color:#262a2b">
+
+
+
+
+        </div>
+        <div class="section fullpagefirst" style="width:100vw; height:100vh; background-color:#ffffff">
+
+        </div>
+        <div class="section fullpagefirst" style="width:100vw; height:100vh; background-color:#262a2b">
+
+        </div>
+    </div>*@
+
+
+<div class="text">
+    <p>What is our Vision?  </p>
+    <p>
+        <span class="word wisteria">Automated.</span>
+        <span class="word belize">Creative.</span>
+        <span class="word pomegranate">Sweet.</span>
+        <span class="word green">Standard.</span>
+    </p>
+</div>
+
+<div class="vision_layer">
+    <div class="vision_layer_inner">
+        <div class="vision_layer_content">
+
+            <div class="box" data-aos="fade-up" data-aos-delay="500" data-aos-duration="500">
+                <div class="bd-box">
+                    <div>
+                        <h4>AUTOMATED</h4>
+                        <span>Work process</span>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="box" data-aos="fade-up" data-aos-delay="1100" data-aos-duration="500">
+                <div class="bd-box">
+                    <div>
+                        <h4>CREATIVE</h4>
+                        <span>Forecasting</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box" data-aos="fade-up" data-aos-delay="1800" data-aos-duration="500">
+                <div class="bd-box">
+                    <div>
+                        <h4>SWEET</h4>
+                        <span>Personal life</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box" data-aos="fade-up" data-aos-delay="2400" data-aos-duration="500">
+                <div class="bd-box">
+                    <div>
+                        <h4>STANDARD</h4>
+                        <span>Of Business circle</span>
+                    </div>
+                </div>
+            </div>
+
+            <h2 data-aos="fade-up" data-aos-delay="3000" data-aos-duration="500">SMART<br>AUTOMATION<br>SERVICE</h2>
+
+
+        </div>
+    </div>
+</div>
+
+
+<div id="pCount" class="business">
+
+    <div class="inner">
+
+        <div id="cont" class="smooth">
+            <ul>
+                <li>
+
+                    <div class="imgbox">
+                        <img src="~/images/PageImage/vision_automated.png" alt="">
+                    </div>
+
+                    <div class="txt">
+                        <p class="stit"><span>Automated</span>Work process</p>
+                        <p class="btit">
+                            자동화된 프로세스 구현으로 <br>
+                            효율적인 업무의 처리가 강화됩니다.
+                        </p>
+                        @*<div class="pre_line">
+                                자동화된 프로세스 구현으로 효율적인 업무의 처리가 강화됩니다.
+                            </div>*@
+                    </div>
+                </li>
+                <li>
+                    <div class="imgbox">
+                        <img src="~/images/PageImage/vision_creative.png" alt="">
+                    </div>
+                    <div class="txt">
+                        <p class="stit stit02"><span>Creative</span>Forecasting</p>
+                        <p class="btit">
+                            변화에 적응하고, 변화를 예측하는 역동적발상으로 <br>
+                            새로운 기술을 창조합니다.
+                        </p>
+                        @*<div class="pre_line">
+                                변화에 적응하고, 변화를 예측하는 역동적 발상으로
+                                새로운 기술을 창조합니다.
+                            </div>*@
+                    </div>
+                </li>
+                <li>
+
+                    <div class="imgbox">
+                        <img src="~/images/PageImage/vision_sweet.png" alt="">
+                    </div>
+
+
+                    <div class="txt">
+                        <p class="stit stit03"><span>Sweet</span>Personal life</p>
+                        <p class="btit">
+                            자동화된 시스템 도입으로 기업에겐 생산성 기여 및 <br>
+                            직원의 업무량을 최소화하여 최종 소비자에겐 삶의 <br>
+                            만족도와 편의를 끌어올릴수 있습니다.
+                        </p>
+                        @*<div class="pre_line">
+
+
+                            </div>*@
+                    </div>
+                </li>
+
+                <li>
+                    <div class="imgbox">
+                        <img src="~/images/PageImage/vision_standard.png" alt="">
+                    </div>
+                    <div class="txt">
+                        <p class="stit stit04"><span>Standard Class</span>Of Business Circle</p>
+                        <p class="btit">
+                            끊임없는 기술개발과 연구로 <br>
+                            업계와 최종 소비자의 선택 기준이 되겠습니다.
+                        </p>
+                        @*<div class="pre_line">
+                                홈페이지는 물론, 블로그 무료제작 및 셋팅, 전담마케팅 팀 운영으로
+                                보다 전문적인 홍보가 가능합니다. 편리한 관원관리 무료 프로그램 제공으로
+                                함께하는 대한검도의 보급을 위한 서포트를 약속드립니다.
+                            </div>*@
+                    </div>
+                </li>
+            </ul>
+        </div><!-- // cont[e] -->
+
+        <div class="grid">
+            <em class="dot"></em>
+            <em class="dot2"></em>
+            <span class="line"></span>
+        </div>
+
+    </div>
+</div>
+
+
+
+@*<div class="inner">
+
+        <div id="cont" class="smooth">
+            <ul>
+                <li data-sb="fadeInUp" class="sb-effect-displayed animated fadeInUp" style="opacity: 1;">
+                    <a target="_blank" href="http://www.hwr.kr/" class="tilter">
+                        <figure class="tilter__figure" style="transform: scaleX(1) scaleY(1) scaleZ(1) translateX(0px) translateY(0px) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);">
+                            <div class="img">
+                                <p class="txtbtn">사이트 방문하기<img src="/sh_page/img/arr_w.png" alt=""></p>
+                                <img src="/sh_page/img/business_img01.jpg" alt="">
+                            </div>
+                        </figure>
+                    </a>
+                    <div class="txt">
+                        <p class="stit"><span>Hanuri</span>하누리</p>
+                        <p class="btit">
+                            시선은 날카롭게, 프로다운 디자인에 <br>
+                            프로 같지 않은 신선한 충격, Creative를 담다.
+                        </p>
+                        <div class="pre_line">
+                            웹은 또하나의 세상 우리를 하나로 묶어주는 하누리
+                            고객의 니즈를 최대한 반영하여 디자인, 웹기획, 솔루션 개발등을 제공합니다.
+                            감각적인 브랜딩을 위한 홈페이지제작 사업부 입니다.
+                        </div>
+                    </div>
+                </li>
+                <li data-sb="fadeInUp" class="sb-effect-displayed animated fadeInUp" style="opacity: 1;">
+                    <a target="_blank" href="http://www.hdweb.co.kr/" class="tilter">
+                        <figure class="tilter__figure" style="transform: scaleX(1) scaleY(1) scaleZ(1) translateX(0px) translateY(0px) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);">
+                            <div class="img img02">
+                                <p class="txtbtn">사이트 방문하기<img src="/sh_page/img/arr_w.png" alt="" title=""></p>
+                                <img src="/sh_page/img/business_img02.jpg" alt="">
+                            </div>
+                        </figure>
+                    </a>
+                    <div class="txt">
+                        <p class="stit stit02"><span>HD Web</span>현대이지웹</p>
+                        <p class="btit">
+                            가능성을 연구하며 능동적으로, <br>
+                            홈페이지 보급을 활성화 하기 위한 프로젝트.
+                        </p>
+                        <div class="pre_line">
+                            홈페이지의 퀄리티는 비용이 좌우한다는 선입견을 깨기 위한 홈페이지 보급 프로젝트.
+                            현대이지웹은 샤이닝의 웹 사업부 중 가장 오래된 사업부로 높은 퀄리티를 유지한 채
+                            합리적인 가격으로 함께 공유하는 디자인을 지향합니다.
+                        </div>
+                    </div>
+                </li>
+                <li data-sb="fadeInUp" class="sb-effect-displayed animated fadeInUp" style="opacity: 1;">
+                    <a target="_blank" href="http://www.make24.kr/" class="tilter">
+                        <figure class="tilter__figure">
+                            <div class="img img03">
+                                <p class="txtbtn">사이트 방문하기<img src="/sh_page/img/arr_w.png" alt=""></p>
+                                <img src="/sh_page/img/business_img03.jpg" alt="">
+                            </div>
+                        </figure>
+                    </a>
+                    <div class="txt">
+                        <p class="stit stit03"><span>Make24</span>메이크24</p>
+                        <p class="btit">
+                            업종에 특화된 감각적인 템플릿<br>
+                            효과적이면서도 퀄리티 있는 홈페이지제작
+                        </p>
+                        <div class="pre_line">
+                            힘들게 결심한 홈페이지제작, 업종별 필요한 기능을 전부 하려고 보니
+                            턱없이 늘어나 있는 제작비용, 기본적인 기능자체를 템플릿으로 제공하여
+                            최소한의 비용으로도 다양한 선택이 가능합니다.
+                        </div>
+                    </div>
+                </li>
+                <li data-sb="fadeInUp" style="opacity: 1;" class="sb-effect-displayed animated fadeInUp">
+                    <a target="_blank" href="https://www.letskumdo.com/" class="tilter">
+                        <figure class="tilter__figure" style="transform: scaleX(1) scaleY(1) scaleZ(1) translateX(0px) translateY(0px) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);">
+                            <div class="img img04">
+                                <p class="txtbtn">사이트 방문하기<img src="/sh_page/img/arr_w.png" alt=""></p>
+                                <img src="/sh_page/img/business_img04.jpg" alt="">
+                            </div>
+                        </figure>
+                    </a>
+                    <div class="txt">
+                        <p class="stit stit04"><span>Let's kumdo</span>렛츠검도</p>
+                        <p class="btit">
+                            국내최초 검도 전문 검색사이트<br>
+                            대한검도의 대중화를 위한 끊임 없는 노력
+                        </p>
+                        <div class="pre_line">
+                            홈페이지는 물론, 블로그 무료제작 및 셋팅, 전담마케팅 팀 운영으로
+                            보다 전문적인 홍보가 가능합니다. 편리한 관원관리 무료 프로그램 제공으로
+                            함께하는 대한검도의 보급을 위한 서포트를 약속드립니다.
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </div>*@
+
+
+
+<div class="bg__style overflow-hid position-relative">
+    <section>
+        <div class="container pl-0 pr-0">
+            <div class="row no-gutters wave-hover rendered" data-wh-speed="0.4" data-wh-repeat="false" data-wh-delay="3">
+                <div class="col-md-6 col-lg-4">
+                    <div class="info-box__wrapper-web wpb_column wave-hover-elem brk-library-rendered" data-brk-library="component__info_box">
+                        <div class="shape">
+                            <span class="before"></span>
+                            <div class="svg-wrap">
+                            </div>
+                            <span class="after"></span>
+                        </div>
+                        <div class="content">
+                            <h3 class="font__family-montserrat font__weight-semibold font__size-28">WHAT IS OUR VISION</h3>
+                            <p class="font__family-open-sans font__size-14">
+                                Smart Automation Service By
+                                Perpect Automation System
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="info-box__wrapper-web wpb_column wave-hover-elem brk-library-rendered" data-brk-library="component__info_box">
+                        <div class="shape">
+                            <span class="before"></span>
+                            <div class="svg-wrap">
+                            </div>
+                            <span class="after"></span>
+                        </div>
+                        <div class="content">
+                            <h3 class="font__family-montserrat font__weight-semibold font__size-28">DIFFERENTIATION STRATEGY</h3>
+                            <p class="font__family-open-sans font__size-14">
+                                Technology Center & Document Center
+                                운영으로 차별화 전략을 추구하고 있습니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="info-box__wrapper-web wpb_column wave-hover-elem brk-library-rendered" data-brk-library="component__info_box">
+                        <div class="shape">
+                            <span class="before"></span>
+                            <div class="svg-wrap">
+                            </div>
+                            <span class="after"></span>
+                        </div>
+                        <div class="content">
+                            <h3 class="font__family-montserrat font__weight-semibold font__size-28">RESEARCH & DEVELOPMENT</h3>
+                            <p class="font__family-open-sans font__size-14">
+                                변화하는 환경에 보다 앞선 적응을 위해
+                                R&D 사업을 지속적으로 추진하고 있습니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <span class="brk-abs-bg-overlay brk-base-bg-gradient-50deg opacity-90"></span>
+    </section>
+</div>
+
+<script>
+    var words = document.getElementsByClassName('word');
+    var wordArray = [];
+    var currentWord = 0;
+
+    words[currentWord].style.opacity = 1;
+    for (var i = 0; i < words.length; i++) {
+        splitLetters(words[i]);
+    }
+
+    function changeWord() {
+        var cw = wordArray[currentWord];
+        var nw = currentWord == words.length - 1 ? wordArray[0] : wordArray[currentWord + 1];
+        for (var i = 0; i < cw.length; i++) {
+            animateLetterOut(cw, i);
+        }
+
+        for (var i = 0; i < nw.length; i++) {
+            nw[i].className = 'letter behind';
+            nw[0].parentElement.style.opacity = 1;
+            animateLetterIn(nw, i);
+        }
+
+        currentWord = (currentWord == wordArray.length - 1) ? 0 : currentWord + 1;
+    }
+
+    function animateLetterOut(cw, i) {
+        setTimeout(function () {
+            cw[i].className = 'letter out';
+        }, i * 80);
+    }
+
+    function animateLetterIn(nw, i) {
+        setTimeout(function () {
+            nw[i].className = 'letter in';
+        }, 340 + (i * 80));
+    }
+
+    function splitLetters(word) {
+        var content = word.innerHTML;
+        word.innerHTML = '';
+        var letters = [];
+        for (var i = 0; i < content.length; i++) {
+            var letter = document.createElement('span');
+            letter.className = 'letter';
+            letter.innerHTML = content.charAt(i);
+            word.appendChild(letter);
+            letters.push(letter);
+        }
+
+        wordArray.push(letters);
+    }
+
+    changeWord();
+    setInterval(changeWord, 3000);
+
+
+</script>
